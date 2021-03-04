@@ -11,17 +11,17 @@ redirect_from:
 
 Education
 ======
-* B.A. in English, Guizhou University, 2009
-* M.A. in Quantitative Linguistics, Zhejiang University, 2016
-* Ph.D in Comparative Linguistics, University of Zurich, 2021 (defended)
+* 2009/09 - 2013/06: B.A. in English, Guizhou University
+* 2013/09 - 2016/03: M.A. in Quantitative Linguistics, Zhejiang University
+* 2016/10 - 2021/02: Ph.D in Comparative Linguistics, University of Zurich
 
 Work experience
 ======
-* January 2017 - February 2021: Research Assistant
+* 2017/01 - 2021/02: Research Assistant
   * University of Zurich
   * Supervisor: Prof. Balthasar Bickel
   
-* October 2018 - February 2019: Research Assistant
+* 2018/10 - 2019/02: Research Assistant
   * University of Zurich
   * Supervisor: Prof. Paul Widmer
   
