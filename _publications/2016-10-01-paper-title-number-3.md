@@ -1,5 +1,5 @@
 ---
-title: "Mean Hierarchical Distance: Augmenting Mean Dependency Distance"
+title: "Quantitative Analysis of English Hierarchical Structure"
 collection: publications
 permalink: /publication/2016-10-01-paper-title-number-3
 excerpt: ''
@@ -10,5 +10,5 @@ citation: 'Liu, Haitao & Yingqi Jing, 2016. &quot;Quantitative Analysis of Engli
 ---
 
 
-Recommended citation: **Jing, Yingqi** \& Haitao Liu, 2016. "Paper Title Number 3." <i>Journal 1</i>. 1(3).
+Recommended citation: Liu, Haitao & **Yingqi Jing**, 2016. Quantitative Analysis of English Hierarchical Structure. *Journal of Foreign Languages*, 6, pp. 2-11.
 

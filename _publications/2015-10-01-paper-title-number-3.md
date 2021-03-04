@@ -10,5 +10,5 @@ citation: 'Jing, Yingqi & Haitao Liu, 2015. &quot;Mean Hierarchical Distance: Au
 ---
 
 
-**Jing, Yingqi** & Haitao Liu, 2015. "Paper Title Number 3." <i>Journal 1</i>. 1(3).
+**Jing, Yingqi** & Haitao Liu, 2015. Mean Hierarchical Distance: Augmenting Mean Dependency Distance. In: *Proceedings of the Third International Conference on Dependency Linguistics (Depling 2015)*, Uppsala, Sweden, August 24-26, pp. 161-170.
 

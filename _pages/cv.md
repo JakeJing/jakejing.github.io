@@ -19,11 +19,11 @@ Work experience
 ======
 * January 2017 - February 2021: Research Assistant
   * University of Zurich
-  * Supervisor: Professor Balthasar Bickel
+  * Supervisor: Prof. Balthasar Bickel
   
 * October 2018 - February 2019: Research Assistant
   * University of Zurich
-  * Supervisor: Professor Paul Widmer
+  * Supervisor: Prof. Paul Widmer
   
 Languages
 ======
