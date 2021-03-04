@@ -6,7 +6,7 @@ excerpt: ''
 date: 2017-10-01
 venue: 'Motifs in Language and Text'
 paperurl: ''
-citation: 'Jing, Yingqi & Haitao Liu, 2017. &quot;Quantitative Analysis of English Hierarchical Structure.&quot; Haitao Liu & Junying Liang (eds.) <i>Motifs in Language and Text</i>. Berlin/Boston: Mouton de Gruyter. pp. 133-150.'
+citation: 'Jing, Yingqi & Haitao Liu, 2017. &quot;Quantitative Analysis of English Hierarchical Structure.&quot; In: Haitao Liu & Junying Liang (eds.) <i>Motifs in Language and Text</i>. Berlin/Boston: Mouton de Gruyter. pp. 133-150.'
 ---
 
 

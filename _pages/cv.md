@@ -12,7 +12,7 @@ redirect_from:
 Education
 ======
 * B.A. in English, Guizhou University, 2009
-* M.S. in Quantitative Linguistics, Zhejiang University, 2016
+* M.A. in Quantitative Linguistics, Zhejiang University, 2016
 * Ph.D in Comparative Linguistics, University of Zurich, 2021 (defended)
 
 Work experience
