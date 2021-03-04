@@ -6,9 +6,9 @@ excerpt: ''
 date: 2015-10-01
 venue: 'Depling'
 paperurl: ''
-citation: 'Jing, Yingqi & Haitao Liu, 2015. &quot;Mean Hierarchical Distance: Augmenting Mean Dependency Distance.&quot; <i>Proceedings of the Third International Conference on Dependency Linguistics</i>. Uppsala, Sweden, August 24-26, pp. 161-170'
+citation: 'Jing, Yingqi & Haitao Liu, 2015. &quot;Mean Hierarchical Distance: Augmenting Mean Dependency Distance.&quot; <i>Proceedings of the Third International Conference on Dependency Linguistics</i>. Uppsala, Sweden, August 24-26, pp. 161-170.'
 ---
 
 
-Recommended citation: **Jing, Yingqi** \& Haitao Liu, 2015. "Paper Title Number 3." <i>Journal 1</i>. 1(3).
+**Jing, Yingqi** & Haitao Liu, 2015. "Paper Title Number 3." <i>Journal 1</i>. 1(3).
 
