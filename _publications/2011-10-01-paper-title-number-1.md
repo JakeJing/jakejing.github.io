@@ -2,14 +2,10 @@
 title: ""
 collection: publications
 permalink: /publication/2010-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
-date: 2010-10-01
+excerpt: ''
+date: 2015
 venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+paperurl: ''
+citation: 'Your Name, You. (2015). &quot;Mean Hierarchical Distance: Augmenting Mean Dependency Distance.&quot; <i>Proceedings of the Third International Conference on Dependency Linguistics (Depling 2015)</i>. Uppsala, Sweden, August 24-26, pp. 161-170.'
 ---
-This paper is about the number 2. The number 3 is left for future work.
-
-[Download paper here](http://academicpages.github.io/files/paper2.pdf)
-
-Recommended citation: Your Name, You. (2010). "Paper Title Number 2." <i>Journal 1</i>. 1(2).
+Recommended citation: **Jing, Yingqi** & Haitao Liu, 2015. "Mean Hierarchical Distance: Augmenting Mean Dependency Distance." <i>*Proceedings of the Third International Conference on Dependency Linguistics (Depling 2015)*</i>. Uppsala, Sweden, August 24-26, pp. 161-170.
