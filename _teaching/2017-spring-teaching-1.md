@@ -9,6 +9,3 @@ location: "Zurich, Switzerland"
 ---
 
 I am the tutor for the course of Quantitative Methods by Prof. Balthasar Bickel.
-
-
-======
