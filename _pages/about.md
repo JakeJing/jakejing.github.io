@@ -20,7 +20,7 @@ We are living in a world that is constructed and defined by languages. We are co
 
 An evolutionary approach
 ======
-Languages are evolving! The languages we are using can tell us where we are from and where we are going. Like genes, languages also encode important information of our history. With the application of comparative methods, like *phylogenetic inference*, it allows us to recover the language history and detect the evolutionary trends of cetain linguistic features in time and space. Like genetic selection, those linguistic traits that are easy to process, produce or learn, will have a higher chance to be perserved and transmitted from generation to generation. Thus, it is necessary to model the dynamic processes of languages and figure out the selective forces that constrain the language change across the world's languages.
+Languages are evolving! The languages we are using can tell us where we are from and where we are going. Like genes, languages also encode important information of our ancestral history. With the application of comparative methods, like *phylogenetic inference*, it allows us to estimate the language history and detect the evolutionary trends of cetain linguistic features in time and space. Like genetic selection, those linguistic traits that are easy to process, produce or learn, will have a higher chance to be perserved and transmitted from generation to generation. Thus, it is necessary to model the dynamic processes of languages and figure out the selective forces that constrain the language change across the world's languages.
 
 
 
