@@ -348,7 +348,7 @@
 
 .comment__content-wrapper {
   float: right;
-  width: calc(100% - 60px);
+  width: calc(100% - 10px);
 
   @include breakpoint($large) {
     width: calc(100% - 100px);
