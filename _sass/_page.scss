@@ -200,7 +200,7 @@
   padding-top: 1em;
   border-top: 1px solid $border-color;
 
-  @include breakpoint(max-width $small) {
+  @include breakpoint(max-width $x-large) {
     .btn span {
       border: 0;
       clip: rect(0 0 0 0);
