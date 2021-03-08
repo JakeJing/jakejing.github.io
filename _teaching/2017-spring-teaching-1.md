@@ -8,4 +8,4 @@ date: 2017-01-01
 location: "Zurich, Switzerland"
 ---
 
-I am the tutor for the course of Quantitative Methods by Prof. Balthasar Bickel.
+I was the tutor for the course of Quantitative Methods by Prof. Balthasar Bickel.
