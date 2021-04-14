@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I have finished my PhD at the Department of Comparative Linguage Science, University of Zürich, with a background of **evolutionary linguistics** and **linguistic typology**. My research focuses on exploring the structural rules and evolutionary trends of word orders in the world’s languages. I am trying to investigate these typological regularities and variation from two perspectives:
+I have finished my PhD at the Department of Comparative Language Science, University of Zürich, with a background of **evolutionary linguistics** and **linguistic typology**. My research focuses on exploring the structural rules and evolutionary trends of word orders in the world’s languages. I am trying to investigate these typological regularities and variation from two perspectives:
 
 1. comparing the observed results from large annotated corpora against various random baselines;
 1. modelling the evolution of typological traits in the histories of language families via phylogenetic inference.
