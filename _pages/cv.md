@@ -17,21 +17,26 @@ Education
 
 Work experience
 ======
-* 2017/01 - 2021/02: Research Assistant
-  * University of Zurich
-  * Supervisor: Prof. Balthasar Bickel
+* 2021/03 - 
+	* Position: Postdoc Researcher
+	* Institute: Department of Biology, University of Turku
+	* PI: Outi Vesakoski
+* 2017/01 - 2021/02
+	* Position: Research Assistant
+  * Institute: Department of Comparative Language Science, University of Zurich
+  * PI: Balthasar Bickel
   
-* 2018/10 - 2019/02: Research Assistant
-  * University of Zurich
-  * Supervisor: Prof. Paul Widmer
-  
-Languages
-======
-Mandarin Chinese (native); English (fluent); German (intermediate); Cantonese (intermediate)
+* 2018/10 - 2019/02
+	* Position: Research Assistant
+  * Institute: Department of Comparative Language Science, University of Zurich
+  * PI: Paul Widmer
+	Languages
+	======
+	Mandarin Chinese (native); English (fluent); German (intermediate); Cantonese (intermediate)
 
 Programming
 ======
- R (advanced); Python (advanced); stan (advanced); JavaScript (intermediate); Julia (intermediate); c++ (intermediate)
+ R (advanced); Python (advanced); stan (advanced); JavaScript (intermediate); Julia (intermediate); c++ (intermediate); SQL (intemediate)
 
 Publications
 ======
