@@ -30,9 +30,9 @@ Work experience
 	* Position: Research Assistant
   * Institute: Department of Comparative Language Science, University of Zurich
   * PI: Paul Widmer
-	Languages
-	======
-	Mandarin Chinese (native); English (fluent); German (intermediate); Cantonese (intermediate)
+Languages
+========
+ Mandarin Chinese (native); English (fluent); German (intermediate); Cantonese (intermediate)
 
 Programming
 ======
