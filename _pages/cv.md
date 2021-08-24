@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: ""
-permalink: /cv/
+permalink: jakejing.github.io/files/cv.pdf
 author_profile: true
 redirect_from:
   - /resume
