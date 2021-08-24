@@ -1,5 +1,5 @@
 ---
-permalink: /files/cv.pdf
+permalink: jakejing.github.io/files/cv.pdf
 ---
 
 
