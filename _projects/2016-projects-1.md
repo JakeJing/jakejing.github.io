@@ -1,0 +1,10 @@
+---
+title: "Word Order Universals: Challenge from Evolutionary Linguistics"
+collection: projects
+type: ""
+permalink: /projects/2016-projects-1
+venue: "Chinese Government Scholarship (#201606320224)"
+date: 2016-10
+location: "Zurich, Switzerland"
+---
+

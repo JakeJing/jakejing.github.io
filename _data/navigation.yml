@@ -6,10 +6,10 @@ main:
   - title: "Talks"
     url: /talks/
 
-  - title: "Teaching"
-    url: /teaching/
+  - title: "Projects"
+    url: /projects/
 
-  - title: "Blog Posts"
+  - title: "Blogs"
     url: /year-archive/
 
   - title: "CV"
