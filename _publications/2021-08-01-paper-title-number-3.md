@@ -1,6 +1,5 @@
 ---
-title: "Dependency Length Minimization and its Limits: :
-a Possible Role for a Probabilistic Version of the Final-Over-Final Condition"
+title: "Dependency Length Minimization and its Limits: a Possible Role for a Probabilistic Version of the Final-Over-Final Condition"
 collection: publications
 permalink: /publication/2021-08-01-paper-title-number-3
 excerpt: ''
