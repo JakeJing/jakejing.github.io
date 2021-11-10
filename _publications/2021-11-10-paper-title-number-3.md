@@ -6,7 +6,7 @@ excerpt: ''
 date: 2021-11-10
 venue: 'Cognitive Science'
 paperurl: ''
-citation: 'Jing, Yingqi, Paul Widmer & Balthasar Bickel. 2021. &quot;Word Order Variation is Partially Constrained by Syntactic Complexity.&quot; <i>Cognitive Science</i>. '
+citation: 'Jing, Yingqi, Paul Widmer & Balthasar Bickel. 2021. &quot;Word Order Variation is Partially Constrained by Syntactic Complexity.&quot; <i>Cognitive Science</i>. 45, e13056.'
 ---
 
 Recommended citation: **Jing, Yingqi**, Paul Widmer & Balthasar Bickel. 2021. Word Order Variation is Partially Constrained by Syntactic Complexity. *Cognitive Science*. 45, e13056. 
