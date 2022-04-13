@@ -142,7 +142,7 @@ $mfp-use-visuallyhidden:              false !default; // Hide content from brows
   display: inline-block;
   vertical-align: middle;
   margin: 0 auto;
-  text-align: left;
+  text-align: justify;
   z-index: $mfp-z-index-base + 5;
 }
 .mfp-inline-holder,
