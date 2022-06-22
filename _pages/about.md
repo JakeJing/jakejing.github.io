@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I have finished my PhD at the Department of Comparative Language Science, University of Zürich, with a background of **evolutionary linguistics** and **linguistic typology**. Now I am working as a postdoc researcher at the Department of Linguistics and Philology, Uppsala University. My research focuses on exploring the structural rules and evolutionary trends of word orders from two perspectives:
+I am currently a visiting researcher at the Department of Linguistics and Philology, Uppsala University. Before that, I got my PhD at the Department of Comparative Language Science, University of Zürich, with a background of **evolutionary linguistics** and **linguistic typology**. My research focuses on exploring the structural rules and evolutionary trends of word orders from two perspectives:
 
 1. comparing the observed results from large annotated corpora against various random baselines;
 1. modelling the evolution of typological traits in the histories of language families via phylogenetic inference.
