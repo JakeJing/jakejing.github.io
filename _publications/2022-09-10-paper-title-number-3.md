@@ -3,7 +3,7 @@ title: "Dependency Length Minimization and its Limits: a Possible Role for a Pro
 collection: publications
 permalink: /publication/2021-09-10-paper-title-number-3
 excerpt: ''
-date: 2021-09-10
+date: 2022-09-10
 venue: 'Language'
 paperurl: 'https://muse.jhu.edu/article/864631'
 citation: 'Jing, Yingqi, Damian Blasi & Balthasar Bickel. 2022. &quot;Dependency Length Minimization and its Limits:
