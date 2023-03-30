@@ -9,92 +9,38 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://d3js.org/d3-random.v2.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<form id="given-params">
-  <label
-    >mu: <input name="mu" id="mu" type="number" step="any" class="input-cell"
-  /></label>
-  <label
-    >sd:
-    <input
-      name="sd"
-      type="number"
-      id="sd"
-      min="0"
-      step="any"
-      class="input-cell"
-  /></label>
-  <label
-    >N: <input name="n" type="number" min="0" id="n" class="input-cell"
-  /></label>
-  <button type="submit">Simulate data</button>
-</form>
+<button onclick="sample_loop()">Start sampling</button>
+<button onclick="stop_sample_loop()">Stop sampling and plot histograms</button>
+<button onclick="clear_samples()">Clear samples</button>
 <div id="mcmc_plots_div"></div>
-<button
-  onclick="var val = JSON.parse(localStorage.getItem('simvalue')); if (Array.isArray(val) && val.length > 0){sample_loop()}"
-  id="startMCMC"
->
-  Start sampling
-</button>
-<button onclick="stop_sample_loop()" id="stopMCMC">Pause & draw</button>
-<button onclick="clear_samples()" id="clearMCMC">Clear</button>
 <script>
-  function simulate_data(mu, sd, n) {
-    simdata = d3.range(n).map(function () {
-      return d3.randomNormal(mu, sd)();
-    });
-    return simdata;
-  }
-  var form = document.querySelector("form");
-  form.addEventListener("submit", function () {
-    // remove event as well
-    if (localStorage.getItem("simvalue")) {
-      localStorage.removeItem("simvalue");
-    }
-    if (localStorage.getItem("sim-mu")) {
-      localStorage.removeItem("sim-mu");
-    }
-    if (localStorage.getItem("sim-sd")) {
-      localStorage.removeItem("sim-sd");
-    }
-    var mu = parseFloat(form.elements.mu.value);
-    var sd = parseFloat(form.elements.sd.value);
-    var n = parseInt(form.elements.n.value);
-    simdata = simulate_data(mu, sd, n);
-    localStorage.setItem("simvalue", JSON.stringify(simdata));
-    localStorage.setItem("sim-mu", JSON.stringify(mu));
-    localStorage.setItem("sim-sd", JSON.stringify(sd));
-    // event.preventDefault(); problematic, remove this line
-  });
-
-  if (localStorage.getItem("simvalue")) {
-    var data = JSON.parse(localStorage.getItem("simvalue"));
-  } else {
-    // data is not available, make a placeholder and generate a warning!
-    console.error("Pls simulate some data!");
-    var data = Array(1);
-  }
+  var data = [183, 192, 182, 183, 177, 185, 188, 188, 182, 185];
 
   var params = {
     mu: { type: "real" },
-    sd: { type: "real", lower: 0 },
+    sigma: { type: "real", lower: 0 },
   };
 
   var log_post = function (state, data) {
     var log_post = 0;
     // Priors
     log_post += ld.norm(state.mu, 0, 100);
-    log_post += ld.unif(state.sd, 0, 100);
+    log_post += ld.unif(state.sigma, 0, 100);
     // Likelihood
     for (var i = 0; i < data.length; i++) {
-      log_post += ld.norm(data[i], state.mu, state.sd);
+      log_post += ld.norm(data[i], state.mu, state.sigma);
     }
     return log_post;
   };
 
   // Initializing the sampler and generate a sample of size 1000
   var sampler = new mcmc.AmwgSampler(params, log_post, data);
-  sampler.burn(1000);
+  sampler.burn(500);
   var samples = sampler.sample(1);
+
+  //// Below is just the code to run the sampler and
+  //// to plot the samples. It's somewhat of a hack...
+  ////////////////////////////////////////////////////
 
   // Setting up the plots
   var plot_margins = { l: 40, r: 10, b: 40, t: 40, pad: 4 };
@@ -123,7 +69,6 @@
     Plotly.plot(
       $("div#" + param + "_hist_div")[0],
       [{ x: samples[param], type: "histogram" }],
-      // layout,
       { margin: plot_margins, title: "Posterior of " + param }
     );
   }
@@ -144,37 +89,6 @@
         x: [samples[param]],
         xbins: {},
       });
-      var y_max = parseFloat(
-        document.getElementById(param + "_hist_div")["layout"]["yaxis"][
-          "range"
-        ][1]
-      );
-      // if original sim params available, add vertical lines
-      if (JSON.parse(localStorage.getItem("sim-" + param))) {
-        // console.log("check whether params available!");
-        Plotly.relayout($("div#" + param + "_hist_div")[0], {
-          shapes: [
-            {
-              type: "line",
-              x0: JSON.parse(localStorage.getItem("sim-" + param)),
-              y0: 0,
-              x1: JSON.parse(localStorage.getItem("sim-" + param)),
-              y1: y_max,
-              line: {
-                color: "red",
-                width: 4,
-                dash: "dash",
-              },
-            },
-          ],
-        });
-      } else {
-        // no sim params available, change it layout as the default
-        Plotly.relayout($("div#" + param + "_hist_div")[0], {
-          yaxis: { range: [0, 1] },
-          shapes: null,
-        });
-      }
     }
   };
 
@@ -183,20 +97,8 @@
 
   var clear_samples = function () {
     samples = sampler.sample(1);
-    if (localStorage.getItem("simvalue")) {
-      localStorage.removeItem("simvalue");
-      // console.log("simvalue deleted from local storage");
-    }
-    if (localStorage.getItem("sim-mu")) {
-      localStorage.removeItem("sim-mu");
-      // console.log("simvalue deleted from local storage");
-    }
-    if (localStorage.getItem("sim-sd")) {
-      localStorage.removeItem("sim-sd");
-      // console.log("simvalue deleted from local storage");
-    }
     update_trace_plots();
-    update_histograms(); // replace this with the following code
+    update_histograms();
   };
 
   var sample_loop_timeout_id;
@@ -219,4 +121,6 @@
     update_trace_plots();
     update_histograms();
   };
+
+  clear_samples();
 </script>
