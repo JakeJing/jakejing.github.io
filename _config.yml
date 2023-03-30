@@ -12,7 +12,7 @@ title_separator          : "-"
 name                     : &name "Yingqi Jing"
 description              : &description "personal description"
 url                      : https://jakejing.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
+baseurl                  : "jakejing.github.io" # the subpath of your site, e.g. "/blog"
 repository               : "https://jakejing.github.io/"
 teaser                   : "profile.png" # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
@@ -242,11 +242,15 @@ timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database
 
 # Plugins
 plugins:
+  - jekyll-relative-links
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
+relative_links:
+  enabled:     true
+  collections: false
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
