@@ -1,0 +1,52 @@
+h1 {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 35px;
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#given-params {
+  position: fixed;
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.input-cell {
+    width: 100px;
+    height: 30px;
+}
+#startMCMC{
+  position: fixed;
+  top: 18%;
+  left: 35%;
+}
+#stopMCMC{
+    position: fixed;
+    top: 18%;
+    left: 48%;
+}
+#clearMCMC{
+    position: fixed;
+    top: 18%;
+    left: 61%;
+}
+#mcmc_plots_div{
+    position: fixed;
+    left: 49.2%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+  }
+@media only screen and (max-width: 400px) {
+  #mcmc_plots_div{
+    position: fixed;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px: 
+  }
+}
+
+

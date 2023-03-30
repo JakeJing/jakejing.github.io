@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simulating and Modeling Normal Distributions via bayes.js</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <h1>Bayesian MCMC for Normal distributions</h1>
+  </head>
+  <body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"
+      charset="utf-8"
+    ></script>
+    <script src="https://rawgit.com/rasmusab/bayes.js/master/mcmc.js"></script>
+    <script src="https://rawgit.com/rasmusab/bayes.js/master/distributions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://d3js.org/d3-random.v2.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <form id="given-params">
+      <label
+        >mu:
+        <input name="mu" id="mu" type="number" step="any" class="input-cell"
+      /></label>
+      <label
+        >sd:
+        <input
+          name="sd"
+          type="number"
+          id="sd"
+          min="0"
+          step="any"
+          class="input-cell"
+      /></label>
+      <label
+        >N: <input name="n" type="number" min="0" id="n" class="input-cell"
+      /></label>
+      <button type="submit">Simulate data</button>
+    </form>
+    <div id="mcmc_plots_div"></div>
+    <button
+      onclick="var val = JSON.parse(localStorage.getItem('simvalue')); if (Array.isArray(val) && val.length > 0){sample_loop()}"
+      id="startMCMC"
+    >
+      Start sampling
+    </button>
+    <button onclick="stop_sample_loop()" id="stopMCMC">Pause & draw</button>
+    <button onclick="clear_samples()" id="clearMCMC">Clear</button>
+    <script src="./script.js"></script>
+  </body>
+</html>
