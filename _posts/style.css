@@ -1,0 +1,374 @@
+/* ***** Importing fonts ****** */
+
+/* Uncomment the below to use local fonts */
+/* Source Serif Pro from here: https://github.com/adobe-fonts/source-serif/releases/tag/3.001R
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url('/dependencies/fonts/SourceSerifPro-Regular.ttf.woff2') format('woff2'),
+         url('/dependencies/fonts/SourceSerifPro-Regular.ttf.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url('/dependencies/fonts/SourceSerifPro-It.ttf.woff2') format('woff2'),
+         url('/dependencies/fonts/SourceSerifPro-It.ttf.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url('/dependencies/fonts/SourceSerifPro-Bold.ttf.woff2') format('woff2'),
+         url('/dependencies/fonts/SourceSerifPro-Bold.ttf.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url('/dependencies/fonts/SourceSerifPro-BoldIt.ttf.woff2') format('woff2'),
+         url('/dependencies/fonts/SourceSerifPro-BoldIt.ttf.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+*/
+
+/* Source Code Pro from here: https://github.com/adobe-fonts/source-code-pro/releases/tag/2.038R-ro%2F1.058R-it%2F1.018R-VAR
+
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('/dependencies/fonts/SourceCodePro-Regular.ttf.woff2') format('woff2'),
+         url('/dependencies/fonts/SourceCodePro-Regular.ttf.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('/dependencies/fonts/SourceCodePro-It.ttf.woff2') format('woff2'),
+         url('/dependencies/fonts/SourceCodePro-It.ttf.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('/dependencies/fonts/SourceCodePro-Bold.ttf.woff2') format('woff2'),
+         url('/dependencies/fonts/SourceCodePro-Bold.ttf.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('/dependencies/fonts/SourceCodePro-BoldIt.ttf.woff2') format('woff2'),
+         url('/dependencies/fonts/SourceCodePro-BoldIt.ttf.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+*/
+
+/* But using the Google CDN for now */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/* ***** Global styling ***** */
+/* Earthy color scheme: */
+:root {
+  --main-color: #000000; 
+  --secondary-color: #669933;
+  --tertiary-color: #CCDD99;
+  --border-color: #999999;
+  --table-color: #666666; 
+  --background-color: #ffffff; 
+  --secondary-background-color: #f0f0f0f0; 
+  --link-color: #3366CC;
+}
+
+/* Neon color scheme:
+:root {
+  --main-color: #000000;
+  --secondary-color: #66ff66; 
+  --tertiary-color: #ffff66; 
+  --border-color: #cc33cc; 
+  --table-color: #9966ff; 
+  --background-color: #ffffff;
+  --secondary-background-color: #f0f0f0f0;
+  --highlight-color: #00cc99; 
+  --link-color: #ff3333; 
+  --visited-link-color: #ff9933; 
+}
+*/
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 16px;
+  font-family: 'Source Serif Pro', 'Palatino', 'Patino linotype', 'palatino lt std', serif;
+  font-size: 18px;
+  background-color: var(--background-color);
+  
+  /* Fixing buggy fonts on mobile devices. https://stackoverflow.com/a/22417120/1001848 */
+  text-size-adjust: 100%; 
+  -ms-text-size-adjust: 100%; 
+  -moz-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%;
+}
+
+hr {
+  border-style: dashed;
+  color: var(--secondary-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:visited {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-color);
+}
+
+.katex {
+  font-size: 1.0em;
+}
+
+/* code */
+pre {
+  border-radius: 3px;
+  border: 1px solid var(--border-color);
+  /* box-shadow: 5px 5px 5px var(--border-color); */
+  padding: 10px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Source Code Pro', 'Consolas', 'Inconsolata', monospace;
+  font-size: 85%;
+  background: var(--secondary-background-color);
+  padding: 0px 2px;
+  border-radius: 3px;
+  border: 1px solid var(--border-color);
+}
+
+/* This is to remove the styling of the inline code when it's in a code block. */
+pre code {
+  background: none;
+  border: none;
+  padding: 0px;
+}
+
+img,
+iframe,
+video {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  /* filter: drop-shadow(5px 5px 5px var(--border-color)); */
+}
+
+
+blockquote {
+  background: var(--background-color);
+  border-left: 5px solid var(--secondary-color);
+  padding: 3px 18px 3px;
+}
+
+table {
+  margin: auto;
+  border-top: 1px solid var(--table-color);
+  border-bottom: 1px solid var(--table-color);
+}
+
+table thead th {
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+thead,
+tfoot,
+tr:nth-child(even) {
+  background: var(--tertiary-color);
+}
+
+/* Site title */
+header h1 {
+  font-size: 36px;
+  margin-bottom: -0.3em;
+}
+
+header h2 {
+  font-size: 26px;
+  margin-top: 0.0em;
+  color: var(--secondary-color);
+}
+
+header a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+header a:visited {
+  color: var(--main-color);
+}
+
+/* Top menu */
+nav {
+  font-size: 20px;
+  text-align: center;
+}
+
+nav ul {
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0px 0px 8px 0px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--main-color);
+  background: var(--tertiary-color);
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+nav a:visited {
+  color: var(--main-color);
+}
+
+nav a:hover {
+  color: var(--main-color);
+  text-decoration: underline;
+}
+
+/* Article title etc. */
+.article-meta {
+  text-align: center;
+}
+
+.article-meta h1 {
+  font-size: 43px;
+  margin-bottom: 0.0px;
+}
+
+.article-meta h2 {
+  font-size: 20px;
+  margin-top: 0.0px;
+  margin-bottom: 0.0px;
+  color: var(--secondary-color);
+}
+
+.article-meta a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.article-meta a:visited {
+  color: var(--main-color);
+}
+
+.article-meta a:hover {
+  color: var(--main-color);
+  text-decoration: underline;
+}
+
+/* Main content */
+.normal-text, main {
+  hyphens: auto;
+  line-height: 1.5;
+}
+
+main {
+  margin-bottom: 2.0em;
+}
+
+main h2 {
+  border-top: dashed var(--tertiary-color) 1px;
+  padding-top: 0.83em; 
+}
+
+main code {
+  hyphens: none;
+}
+
+.read-on {
+  font-size: 22px;
+  margin-top: 40px;
+}
+
+.read-on a {
+  color: var(--main-color);
+  background: var(--tertiary-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.read-on a:hover {
+  text-decoration: underline;
+}
+
+.signature {
+  color: var(--secondary-color);
+  margin-top: 27px;
+}
+
+/* Pagination */
+div.pagination {
+  text-align: center;
+}
+
+a.pagination-next {
+  float: left;
+}
+
+a.pagination-archive {
+  display: inline-block;
+}
+
+a.pagination-prev {
+  float: right;
+}
+
+a.pagination-archive,
+a.pagination-prev,
+a.pagination-next {
+  color: var(--main-color);
+  text-decoration: none;
+  background: var(--tertiary-color);
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+a.pagination-archive:visited,
+a.pagination-prev:visited,
+a.pagination-next:visited {
+  color: var(--main-color);
+}
+
+a.pagination-archive:hover,
+a.pagination-prev:hover,
+a.pagination-next:hover {
+  color: var(--main-color);
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 14px;
+}

@@ -1,17 +1,38 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)https://www.sumsar.net/blog/2015/12/bayes-js-a-small-library-for-doing-mcmc-in-the-browser/ -->
 <html lang="en-us">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>bayes.js: A Small Library for Doing MCMC in the Browser</title>
-    <meta property="og:title" content="MCMC in the Browser" />
+    <title _msttexthash="3419442" _msthash="0">
+      bayes.js: A Small Library for Doing MCMC in the Browser | Rasmus Bååth's
+      blog
+    </title>
+    <meta property="og:site_name" content="Rasmus Bååth&#39;s Blog" />
+    <meta
+      property="og:title"
+      content="bayes.js: A Small Library for Doing MCMC in the Browser"
+    />
     <meta
       property="og:description"
       content="Bayesian data analysis is cool, Markov chain Monte Carlo is the cool technique that makes Bayesian data analysis possible, and wouldn’t it be coolness if you could do all of this in the browser? …"
     />
-    <script
-      defer=""
-      src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"
-    ></script>
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://sumsar.net/blog/2015/12/bayes-js-a-small-library-for-doing-mcmc-in-the-browser/"
+    />
+    <meta
+      property="og:image"
+      content="https://sumsar.net/images/open-graph-placeholder.png"
+    />
+
+    <link rel="stylesheet" href="./katex.min.css" />
+    <script defer="" src="./katex.min.js"></script>
+
+    <script defer="" src="./auto-render.min.js"></script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         renderMathInElement(document.body, {
@@ -22,15 +43,13 @@
         });
       });
     </script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"
-      charset="utf-8"
-    ></script>
-    <script src="https://rawgit.com/rasmusab/bayes.js/master/mcmc.js"></script>
-    <script src="https://rawgit.com/rasmusab/bayes.js/master/distributions.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://d3js.org/d3-random.v2.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="./plotly-1.3.0.min.js"></script>
+    <style></style>
+    <script type="text/javascript" src="./mcmc.js"></script>
+    <script type="text/javascript" src="./distributions.js"></script>
   </head>
 
   <body
@@ -38,17 +57,27 @@
     data-new-gr-c-s-check-loaded="14.1028.0"
     data-gr-ext-installed=""
   >
+    <header>
+      <h1>
+        <a href="https://www.sumsar.net/" _msttexthash="312546" _msthash="1"
+          >Publishable Stuff</a
+        >
+      </h1>
+      <h2 _msttexthash="371163" _msthash="2">Rasmus Bååth's Blog</h2>
+      <hr />
+    </header>
+
     <div class="article-meta">
       <h1>
-        <span class="title"
+        <span class="title" _msttexthash="1761240" _msthash="9"
           >bayes.js: A Small Library for Doing MCMC in the Browser</span
         >
       </h1>
-      <h2 class="date">2015-12-31</h2>
+      <h2 class="date" _msttexthash="73021" _msthash="10">2015-12-31</h2>
     </div>
 
     <main>
-      <p>
+      <p _msttexthash="134721496" _msthash="11">
         Bayesian data analysis is cool, Markov chain Monte Carlo is the cool
         technique that makes Bayesian data analysis possible, and wouldn’t it be
         <em>coolness</em> if you could do all of this in the browser? That was
@@ -58,7 +87,7 @@
         of probability distributions, and that makes it relatively easy to
         implement simple Bayesian models in JavaScript.
       </p>
-      <p>
+      <p _msttexthash="14220193" _msthash="12">
         Here is a motivating example: Say that you have the heights of the last
         ten American presidents…
       </p>
@@ -75,18 +104,26 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> heights <span style="color:#666">=</span> [<span style="color:#40a070">183</span>, <span style="color:#40a070">192</span>, <span style="color:#40a070">182</span>, <span style="color:#40a070">183</span>, <span style="color:#40a070">177</span>, <span style="color:#40a070">185</span>, <span style="color:#40a070">188</span>, <span style="color:#40a070">188</span>, <span style="color:#40a070">182</span>, <span style="color:#40a070">185</span>];
 </span></span></code></pre>
       </div>
-      <p>
+      <p _msttexthash="54549365" _msthash="13">
         … and that you would like to fit a Bayesian model assuming a Normal
         distribution to this data. Well, you can do that
         <strong>right now</strong> by clicking “Start sampling” below! This will
         run an MCMC sampler in your browser implemented in JavaScript.
       </p>
       <p>
-        <button onclick="sample_loop()">Start sampling</button>
-        <button onclick="stop_sample_loop()">
+        <button onclick="sample_loop()" _msttexthash="235235" _msthash="14">
+          Start sampling
+        </button>
+        <button
+          onclick="stop_sample_loop()"
+          _msttexthash="857311"
+          _msthash="15"
+        >
           Stop sampling and plot histograms
         </button>
-        <button onclick="clear_samples()">Clear samples</button>
+        <button onclick="clear_samples()" _msttexthash="205764" _msthash="16">
+          Clear samples
+        </button>
       </p>
       <div id="mcmc_plots_div">
         <div>
@@ -430,6 +467,8 @@
                             white-space: pre;
                           "
                           data-bb="47"
+                          _mstTextHash="798798"
+                          _mstHash="17"
                         >
                           −1
                         </text>
@@ -449,6 +488,8 @@
                             white-space: pre;
                           "
                           data-bb="48"
+                          _mstTextHash="810966"
+                          _mstHash="18"
                         >
                           −0.5
                         </text>
@@ -468,6 +509,8 @@
                             white-space: pre;
                           "
                           data-bb="49"
+                          _mstTextHash="4368"
+                          _mstHash="19"
                         >
                           0
                         </text>
@@ -487,6 +530,8 @@
                             white-space: pre;
                           "
                           data-bb="50"
+                          _mstTextHash="15353"
+                          _mstHash="20"
                         >
                           0.5
                         </text>
@@ -506,6 +551,8 @@
                             white-space: pre;
                           "
                           data-bb="51"
+                          _mstTextHash="4459"
+                          _mstHash="21"
                         >
                           1
                         </text>
@@ -526,6 +573,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="16367"
+                          _mstHash="22"
                         >
                           184
                         </text>
@@ -544,6 +593,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="29926"
+                          _mstHash="23"
                         >
                           184.5
                         </text>
@@ -562,6 +613,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="16484"
+                          _mstHash="24"
                         >
                           185
                         </text>
@@ -580,6 +633,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="30043"
+                          _mstHash="25"
                         >
                           185.5
                         </text>
@@ -634,6 +689,8 @@
                           white-space: pre;
                           visibility: visible;
                         "
+                        _mstTextHash="236743"
+                        _mstHash="26"
                       >
                         Traceplot of mu
                       </text>
@@ -1121,6 +1178,8 @@
                             white-space: pre;
                           "
                           data-bb="61"
+                          _mstTextHash="16601"
+                          _mstHash="27"
                         >
                           186
                         </text>
@@ -1140,6 +1199,8 @@
                             white-space: pre;
                           "
                           data-bb="62"
+                          _mstTextHash="16835"
+                          _mstHash="28"
                         >
                           188
                         </text>
@@ -1159,6 +1220,8 @@
                             white-space: pre;
                           "
                           data-bb="63"
+                          _mstTextHash="16003"
+                          _mstHash="29"
                         >
                           190
                         </text>
@@ -1178,6 +1241,8 @@
                             white-space: pre;
                           "
                           data-bb="64"
+                          _mstTextHash="16237"
+                          _mstHash="30"
                         >
                           192
                         </text>
@@ -1198,6 +1263,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="4368"
+                          _mstHash="31"
                         >
                           0
                         </text>
@@ -1216,6 +1283,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="15353"
+                          _mstHash="32"
                         >
                           0.5
                         </text>
@@ -1234,6 +1303,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="4459"
+                          _mstHash="33"
                         >
                           1
                         </text>
@@ -1288,6 +1359,8 @@
                           white-space: pre;
                           visibility: visible;
                         "
+                        _mstTextHash="239798"
+                        _mstHash="34"
                       >
                         Posterior of mu
                       </text>
@@ -1819,6 +1892,8 @@
                             white-space: pre;
                           "
                           data-bb="54"
+                          _mstTextHash="798798"
+                          _mstHash="35"
                         >
                           −1
                         </text>
@@ -1838,6 +1913,8 @@
                             white-space: pre;
                           "
                           data-bb="55"
+                          _mstTextHash="810966"
+                          _mstHash="36"
                         >
                           −0.5
                         </text>
@@ -1857,6 +1934,8 @@
                             white-space: pre;
                           "
                           data-bb="56"
+                          _mstTextHash="4368"
+                          _mstHash="37"
                         >
                           0
                         </text>
@@ -1876,6 +1955,8 @@
                             white-space: pre;
                           "
                           data-bb="57"
+                          _mstTextHash="15353"
+                          _mstHash="38"
                         >
                           0.5
                         </text>
@@ -1895,6 +1976,8 @@
                             white-space: pre;
                           "
                           data-bb="58"
+                          _mstTextHash="4459"
+                          _mstHash="39"
                         >
                           1
                         </text>
@@ -1915,6 +1998,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="15717"
+                          _mstHash="40"
                         >
                           4.5
                         </text>
@@ -1933,6 +2018,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="4823"
+                          _mstHash="41"
                         >
                           5
                         </text>
@@ -1951,6 +2038,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="15808"
+                          _mstHash="42"
                         >
                           5.5
                         </text>
@@ -1969,6 +2058,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="4914"
+                          _mstHash="43"
                         >
                           6
                         </text>
@@ -2023,6 +2114,8 @@
                           white-space: pre;
                           visibility: visible;
                         "
+                        _mstTextHash="319462"
+                        _mstHash="44"
                       >
                         Traceplot of sigma
                       </text>
@@ -2510,6 +2603,8 @@
                             white-space: pre;
                           "
                           data-bb="67"
+                          _mstTextHash="4914"
+                          _mstHash="45"
                         >
                           6
                         </text>
@@ -2529,6 +2624,8 @@
                             white-space: pre;
                           "
                           data-bb="68"
+                          _mstTextHash="5096"
+                          _mstHash="46"
                         >
                           8
                         </text>
@@ -2548,6 +2645,8 @@
                             white-space: pre;
                           "
                           data-bb="69"
+                          _mstTextHash="9451"
+                          _mstHash="47"
                         >
                           10
                         </text>
@@ -2567,6 +2666,8 @@
                             white-space: pre;
                           "
                           data-bb="70"
+                          _mstTextHash="9659"
+                          _mstHash="48"
                         >
                           12
                         </text>
@@ -2587,6 +2688,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="4368"
+                          _mstHash="49"
                         >
                           0
                         </text>
@@ -2605,6 +2708,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="15353"
+                          _mstHash="50"
                         >
                           0.5
                         </text>
@@ -2623,6 +2728,8 @@
                             visibility: visible;
                             white-space: pre;
                           "
+                          _mstTextHash="4459"
+                          _mstHash="51"
                         >
                           1
                         </text>
@@ -2677,6 +2784,8 @@
                           white-space: pre;
                           visibility: visible;
                         "
+                        _mstTextHash="322517"
+                        _mstHash="52"
                       >
                         Posterior of sigma
                       </text>
@@ -2870,121 +2979,163 @@
       </div>
       <div id="text_output_div"></div>
       <script>
+        function loadScript(url, callback) {
+          // Adding the script tag to the head as suggested before
+          var head = document.getElementsByTagName("head")[0];
+          var script = document.createElement("script");
+          script.type = "text/javascript";
+          script.src = url;
+
+          // Then bind the event to the callback function.
+          // There are several events for cross browser compatibility.
+          script.onreadystatechange = callback;
+          script.onload = callback;
+
+          // Fire the loading
+          head.appendChild(script);
+        }
+
         var clear_samples;
         var sample_loop;
         var stop_sample_loop;
-        var data = [183, 192, 182, 183, 177, 185, 188, 188, 182, 185];
 
-        var params = {
-          mu: { type: "real" },
-          sigma: { type: "real", lower: 0 },
-        };
+        // loadScript("./jquery.min.js", function(){
+        // loadScript("https://cdn.plot.ly/plotly-1.3.0.min.js", function(){
+        loadScript("./jquery.min.js", function () {
+          loadScript("./plotly-1.3.0.min.js", function () {
+            loadScript("./mcmc.js", function () {
+              loadScript("./distributions.js", function () {
+                var heights = [183, 192, 182, 177, 185, 188, 188, 182, 185];
 
-        var log_post = function (state, data) {
-          var log_post = 0;
-          // Priors
-          log_post += ld.norm(state.mu, 0, 100);
-          log_post += ld.unif(state.sigma, 0, 100);
-          // Likelihood
-          for (var i = 0; i < data.length; i++) {
-            log_post += ld.norm(data[i], state.mu, state.sigma);
-          }
-          return log_post;
-        };
+                var params = {
+                  mu: { type: "real" },
+                  sigma: { type: "real", lower: 0 },
+                };
 
-        // Initializing the sampler and generate a sample of size 1000
-        var sampler = new mcmc.AmwgSampler(params, log_post, data);
-        sampler.burn(500);
-        var samples = sampler.sample(1);
+                var log_post = function (state, heights) {
+                  var log_post = 0;
+                  // Priors (here sloppy and vague...)
+                  log_post += ld.norm(state.mu, 0, 1000);
+                  log_post += ld.unif(state.sigma, 0, 1000);
+                  // Likelihood
+                  for (var i = 0; i < heights.length; i++) {
+                    log_post += ld.norm(heights[i], state.mu, state.sigma);
+                  }
+                  return log_post;
+                };
 
-        //// Below is just the code to run the sampler and
-        //// to plot the samples. It's somewhat of a hack...
-        ////////////////////////////////////////////////////
+                // Initializing the sampler and generate a sample of size 1000
+                var sampler = new mcmc.AmwgSampler(params, log_post, heights);
+                sampler.burn(1000);
+                var samples = sampler.sample(1000);
 
-        // Setting up the plots
-        var plot_margins = { l: 40, r: 10, b: 40, t: 40, pad: 4 };
+                //// Below is just the code to run the sampler and
+                //// to plot the samples. It's somewhat of a hack...
+                ////////////////////////////////////////////////////
 
-        var param_names = Object.keys(params);
-        var params_to_plot = Object.keys(params);
+                // Setting up the plots
+                var plot_margins = {
+                  l: 40,
+                  r: 10,
+                  b: 40,
+                  t: 40,
+                  pad: 4,
+                };
 
-        for (var i = 0; i < params_to_plot.length; i++) {
-          var param = params_to_plot[i];
-          $("div#mcmc_plots_div").append(
-            "<div>" +
-              '<div id = "' +
-              param +
-              "_trace_div" +
-              '" style="width:350px;height:250px;display: inline-block;"></div>' +
-              '<div id = "' +
-              param +
-              "_hist_div" +
-              '" style="width:350px;height:250px;display: inline-block;"></div>' +
-              "</div>"
-          );
-          Plotly.plot(
-            $("div#" + param + "_trace_div")[0],
-            [{ y: samples[param] }],
-            { margin: plot_margins, title: "Traceplot of " + param }
-          );
-          Plotly.plot(
-            $("div#" + param + "_hist_div")[0],
-            [{ x: samples[param], type: "histogram" }],
-            { margin: plot_margins, title: "Posterior of " + param }
-          );
-        }
+                var param_names = Object.keys(params);
+                var params_to_plot = Object.keys(params);
 
-        var update_trace_plots = function () {
-          for (var i = 0; i < params_to_plot.length; i++) {
-            var param = params_to_plot[i];
-            Plotly.restyle($("div#" + param + "_trace_div")[0], {
-              y: [samples[param]],
+                for (var i = 0; i < params_to_plot.length; i++) {
+                  var param = params_to_plot[i];
+                  $("div#mcmc_plots_div").append(
+                    "<div>" +
+                      '<div id = "' +
+                      param +
+                      "_trace_div" +
+                      '" style="width:300px;height:200px;display: inline-block;"></div>' +
+                      '<div id = "' +
+                      param +
+                      "_hist_div" +
+                      '" style="width:300px;height:200px;display: inline-block;"></div>' +
+                      "</div>"
+                  );
+                  Plotly.plot(
+                    $("div#" + param + "_trace_div")[0],
+                    [{ y: samples[param] }],
+                    {
+                      margin: plot_margins,
+                      title: "Traceplot of " + param,
+                    }
+                  );
+                  Plotly.plot(
+                    $("div#" + param + "_hist_div")[0],
+                    [{ x: samples[param], type: "histogram" }],
+                    {
+                      margin: plot_margins,
+                      title: "Posterior of " + param,
+                    }
+                  );
+                }
+
+                var update_trace_plots = function () {
+                  for (var i = 0; i < params_to_plot.length; i++) {
+                    var param = params_to_plot[i];
+                    Plotly.restyle($("div#" + param + "_trace_div")[0], {
+                      y: [samples[param]],
+                    });
+                  }
+                };
+
+                var update_histograms = function () {
+                  for (var i = 0; i < params_to_plot.length; i++) {
+                    var param = params_to_plot[i];
+                    Plotly.restyle($("div#" + param + "_hist_div")[0], {
+                      x: [samples[param]],
+                    });
+                  }
+                };
+
+                // Below are the functions that enables starting and stopping the
+                // sampling using the buttons
+
+                clear_samples = function () {
+                  samples = sampler.sample(1);
+                  update_trace_plots();
+                  update_histograms();
+                };
+
+                var sample_loop_timeout_id;
+                sample_loop = function () {
+                  var n_samples = Math.min(
+                    100,
+                    Math.ceil(samples[param_names[0]].length / 10)
+                  );
+                  var more_samples = sampler.sample(n_samples);
+                  for (var i = 0; i < param_names.length; i++) {
+                    var param = param_names[i];
+                    Array.prototype.push.apply(
+                      samples[param],
+                      more_samples[param]
+                    );
+                  }
+                  update_trace_plots();
+                  sample_loop_timeout_id = setTimeout(sample_loop, 1);
+                };
+
+                stop_sample_loop = function () {
+                  clearTimeout(sample_loop_timeout_id);
+                  update_trace_plots();
+                  update_histograms();
+                };
+
+                clear_samples();
+              });
             });
-          }
-        };
-
-        var update_histograms = function () {
-          for (var i = 0; i < params_to_plot.length; i++) {
-            var param = params_to_plot[i];
-            Plotly.restyle($("div#" + param + "_hist_div")[0], {
-              x: [samples[param]],
-              xbins: {},
-            });
-          }
-        };
-
-        // Below are the functions that enables starting and stopping the
-        // sampling using the buttons
-
-        var clear_samples = function () {
-          samples = sampler.sample(1);
-          update_trace_plots();
-          update_histograms();
-        };
-
-        var sample_loop_timeout_id;
-        var sample_loop = function () {
-          var n_samples = Math.min(
-            250,
-            Math.ceil(samples[param_names[0]].length / 10)
-          );
-          var more_samples = sampler.sample(n_samples);
-          for (var i = 0; i < param_names.length; i++) {
-            var param = param_names[i];
-            Array.prototype.push.apply(samples[param], more_samples[param]);
-          }
-          update_trace_plots();
-          sample_loop_timeout_id = setTimeout(sample_loop, 1);
-        };
-
-        var stop_sample_loop = function () {
-          clearTimeout(sample_loop_timeout_id);
-          update_trace_plots();
-          update_histograms();
-        };
-        clear_samples();
+          });
+        });
       </script>
       <p>
-        <em
+        <em _msttexthash="6907979" _msthash="53"
           >If this doesn’t seem to work in your browser, for some reason, then
           try
           <a href="https://codepen.io/rasmusab/pen/LpaKep?editors=001"
@@ -2993,7 +3144,9 @@
           of the demo.</em
         >
       </p>
-      <p>Here is the model you just sampled from…</p>
+      <p _msttexthash="5186922" _msthash="54">
+        Here is the model you just sampled from…
+      </p>
       <p>
         <span
           ><span class="katex-display"
@@ -3004,22 +3157,60 @@
                   display="block"
                   ><semantics
                     ><mrow
-                      ><mi>μ</mi><mo>∼</mo><mtext>Normal</mtext
-                      ><mo stretchy="false">(</mo><mn>0</mn
-                      ><mo separator="true">,</mo><mn>1000</mn
-                      ><mo stretchy="false">)</mo
-                      ><mspace linebreak="newline"></mspace><mi>σ</mi><mo>∼</mo
-                      ><mtext>Uniform</mtext><mo stretchy="false">(</mo
-                      ><mn>0</mn><mo separator="true">,</mo><mn>1000</mn
+                      ><mi _mstTextHash="86996" _mstHash="55">μ</mi
+                      ><mo _mstTextHash="797524" _mstHash="56">∼</mo
+                      ><mtext _mstTextHash="76869" _mstHash="57">Normal</mtext
+                      ><mo stretchy="false">(</mo
+                      ><mn _mstTextHash="4368" _mstHash="58">0</mn
+                      ><mo separator="true" _mstTextHash="4004" _mstHash="59"
+                        >,</mo
+                      ><mn _mstTextHash="21307" _mstHash="60">1000</mn
                       ><mo stretchy="false">)</mo
                       ><mspace linebreak="newline"></mspace
-                      ><msub><mtext>heights</mtext><mi>i</mi></msub
-                      ><mo>∼</mo><mtext>Normal</mtext><mo stretchy="false">(</mo
-                      ><mi>μ</mi><mo separator="true">,</mo><mi>σ</mi
+                      ><mi _mstTextHash="87633" _mstHash="61">σ</mi
+                      ><mo _mstTextHash="797524" _mstHash="62">∼</mo
+                      ><mtext _mstTextHash="96798" _mstHash="63">Uniform</mtext
+                      ><mo stretchy="false">(</mo
+                      ><mn _mstTextHash="4368" _mstHash="64">0</mn
+                      ><mo separator="true" _mstTextHash="4004" _mstHash="65"
+                        >,</mo
+                      ><mn _mstTextHash="21307" _mstHash="66">1000</mn
                       ><mo stretchy="false">)</mo
-                      ><mtext>&nbsp;&nbsp;&nbsp;for&nbsp;</mtext><mi>i</mi
-                      ><mtext>&nbsp;in</mtext><mn>1..</mn><mi>n</mi></mrow
-                    ><annotation encoding="application/x-tex"
+                      ><mspace linebreak="newline"></mspace
+                      ><msub
+                        ><mtext _mstTextHash="98046" _mstHash="67"
+                          >heights</mtext
+                        ><mi _mstTextHash="9555" _mstHash="68">i</mi></msub
+                      ><mo _mstTextHash="797524" _mstHash="69">∼</mo
+                      ><mtext _mstTextHash="76869" _mstHash="70">Normal</mtext
+                      ><mo stretchy="false">(</mo
+                      ><mi _mstTextHash="86996" _mstHash="71">μ</mi
+                      ><mo separator="true" _mstTextHash="4004" _mstHash="72"
+                        >,</mo
+                      ><mi _mstTextHash="87633" _mstHash="73">σ</mi
+                      ><mo stretchy="false">)</mo
+                      ><mtext
+                        >&nbsp;&nbsp;&nbsp;<font
+                          _mstmutation="1"
+                          _msttexthash="34164"
+                          _msthash="74"
+                          >for</font
+                        >&nbsp;</mtext
+                      ><mi _mstTextHash="9555" _mstHash="75">i</mi
+                      ><mtext
+                        >&nbsp;<font
+                          _mstmutation="1"
+                          _msttexthash="20995"
+                          _msthash="76"
+                          >in</font
+                        ></mtext
+                      ><mn _mstTextHash="14625" _mstHash="77">1..</mn
+                      ><mi _mstTextHash="10010" _mstHash="78">n</mi></mrow
+                    ><annotation
+                      encoding="application/x-tex"
+                      _mstTextHash="13580879"
+                      _mstHidden="1"
+                      _mstHash="79"
                       >\mu \sim \text{Normal}(0, 1000) \\ \sigma \sim
                       \text{Uniform}(0, 1000) \\ \text{heights}_i \sim
                       \text{Normal}(\mu, \sigma) ~~~ \text{for} ~ i ~ \text{in}
@@ -3033,9 +3224,10 @@
                     class="strut"
                     style="height: 0.625em; vertical-align: -0.1944em"
                   ></span
-                  ><span class="mord mathnormal">μ</span
+                  ><font _mstmutation="1" _msttexthash="998452" _msthash="80"
+                    ><span class="mord mathnormal" _mstmutation="1">μ</span
+                    ><span class="mrel" _mstmutation="1">∼</span></font
                   ><span class="mspace" style="margin-right: 0.2778em"></span
-                  ><span class="mrel">∼</span
                   ><span
                     class="mspace"
                     style="margin-right: 0.2778em"
@@ -3045,20 +3237,26 @@
                     class="strut"
                     style="height: 1em; vertical-align: -0.25em"
                   ></span
-                  ><span class="mord text"
-                    ><span class="mord">Normal</span></span
-                  ><span class="mopen">(</span><span class="mord">0</span
-                  ><span class="mpunct">,</span
+                  ><font _mstmutation="1" _msttexthash="144833" _msthash="81"
+                    ><span class="mord text" _mstmutation="1"
+                      ><span class="mord">Normal</span></span
+                    ><span class="mopen" _mstmutation="1">(</span
+                    ><span class="mord" _mstmutation="1">0</span
+                    ><span class="mpunct" _mstmutation="1">,</span
+                    ><span class="mord" _mstmutation="1">1000</span></font
                   ><span class="mspace" style="margin-right: 0.1667em"></span
-                  ><span class="mord">1000</span
                   ><span class="mclose">)</span></span
                 ><span class="mspace newline"></span
                 ><span class="base"
                   ><span class="strut" style="height: 0.4306em"></span
-                  ><span class="mord mathnormal" style="margin-right: 0.0359em"
-                    >σ</span
+                  ><font _mstmutation="1" _msttexthash="999089" _msthash="82"
+                    ><span
+                      class="mord mathnormal"
+                      style="margin-right: 0.0359em"
+                      _mstmutation="1"
+                      >σ</span
+                    ><span class="mrel" _mstmutation="1">∼</span></font
                   ><span class="mspace" style="margin-right: 0.2778em"></span
-                  ><span class="mrel">∼</span
                   ><span
                     class="mspace"
                     style="margin-right: 0.2778em"
@@ -3068,12 +3266,14 @@
                     class="strut"
                     style="height: 1em; vertical-align: -0.25em"
                   ></span
-                  ><span class="mord text"
-                    ><span class="mord">Uniform</span></span
-                  ><span class="mopen">(</span><span class="mord">0</span
-                  ><span class="mpunct">,</span
+                  ><font _mstmutation="1" _msttexthash="168987" _msthash="83"
+                    ><span class="mord text" _mstmutation="1"
+                      ><span class="mord">Uniform</span></span
+                    ><span class="mopen" _mstmutation="1">(</span
+                    ><span class="mord" _mstmutation="1">0</span
+                    ><span class="mpunct" _mstmutation="1">,</span
+                    ><span class="mord" _mstmutation="1">1000</span></font
                   ><span class="mspace" style="margin-right: 0.1667em"></span
-                  ><span class="mord">1000</span
                   ><span class="mclose">)</span></span
                 ><span class="mspace newline"></span
                 ><span class="base"
@@ -3083,7 +3283,9 @@
                   ></span
                   ><span class="mord"
                     ><span class="mord text"
-                      ><span class="mord">heights</span></span
+                      ><span class="mord" _msttexthash="98046" _msthash="84"
+                        >heights</span
+                      ></span
                     ><span class="msupsub"
                       ><span class="vlist-t vlist-t2"
                         ><span class="vlist-r"
@@ -3093,19 +3295,28 @@
                               style="top: -2.4559em; margin-right: 0.05em"
                               ><span class="pstrut" style="height: 2.7em"></span
                               ><span class="sizing reset-size6 size3 mtight"
-                                ><span class="mord mathnormal mtight"
+                                ><span
+                                  class="mord mathnormal mtight"
+                                  _msttexthash="9555"
+                                  _msthash="85"
                                   >i</span
                                 ></span
                               ></span
                             ></span
-                          ><span class="vlist-s">​</span></span
+                          ><span
+                            class="vlist-s"
+                            _msttexthash="746473"
+                            _msthash="86"
+                            >​</span
+                          ></span
                         ><span class="vlist-r"
                           ><span class="vlist" style="height: 0.2441em"
                             ><span
                               class=""
                             ></span></span></span></span></span></span
                   ><span class="mspace" style="margin-right: 0.2778em"></span
-                  ><span class="mrel">∼</span
+                  ><span class="mrel" _msttexthash="797524" _msthash="87"
+                    >∼</span
                   ><span
                     class="mspace"
                     style="margin-right: 0.2778em"
@@ -3115,32 +3326,42 @@
                     class="strut"
                     style="height: 1em; vertical-align: -0.25em"
                   ></span
-                  ><span class="mord text"
-                    ><span class="mord">Normal</span></span
-                  ><span class="mopen">(</span
-                  ><span class="mord mathnormal">μ</span
-                  ><span class="mpunct">,</span
+                  ><font _mstmutation="1" _msttexthash="732472" _msthash="88"
+                    ><span class="mord text" _mstmutation="1"
+                      ><span class="mord">Normal</span></span
+                    ><span class="mopen" _mstmutation="1">(</span
+                    ><span class="mord mathnormal" _mstmutation="1">μ</span
+                    ><span class="mpunct" _mstmutation="1">,</span
+                    ><span
+                      class="mord mathnormal"
+                      style="margin-right: 0.0359em"
+                      _mstmutation="1"
+                      >σ</span
+                    ><span class="mclose" _mstmutation="1">)</span
+                    ><span class="mord text" _mstmutation="1"
+                      ><span class="mord">for</span></span
+                    ><span class="mord mathnormal" _mstmutation="1">i</span
+                    ><span class="mord text" _mstmutation="1"
+                      ><span class="mord">in</span></span
+                    ><span class="mord" _mstmutation="1">1..</span
+                    ><span class="mord mathnormal" _mstmutation="1"
+                      >n</span
+                    ></font
                   ><span class="mspace" style="margin-right: 0.1667em"></span
-                  ><span class="mord mathnormal" style="margin-right: 0.0359em"
-                    >σ</span
-                  ><span class="mclose">)</span
                   ><span class="mspace nobreak">&nbsp;</span
                   ><span class="mspace nobreak">&nbsp;</span
                   ><span class="mspace nobreak">&nbsp;</span
-                  ><span class="mord text"><span class="mord">for</span></span
                   ><span class="mspace nobreak">&nbsp;</span
-                  ><span class="mord mathnormal">i</span
-                  ><span class="mspace nobreak">&nbsp;</span
-                  ><span class="mord text"><span class="mord">in</span></span
-                  ><span class="mord">1..</span
-                  ><span class="mord mathnormal">n</span></span
+                  ><span class="mspace nobreak">&nbsp;</span></span
                 ></span
               ></span
             ></span
           ></span
         >
       </p>
-      <p>… and this is how it is implemented in JavaScript:</p>
+      <p _msttexthash="2229253" _msthash="89">
+        … and this is how it is implemented in JavaScript:
+      </p>
       <div class="highlight">
         <pre
           tabindex="0"
@@ -3186,7 +3407,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> samples <span style="color:#666">=</span> sampler.sample(<span style="color:#40a070">1000</span>);
 </span></span></code></pre>
       </div>
-      <p>
+      <p _msttexthash="250309813" _msthash="90">
         I’ve implemented
         <a href="https://sumsar.net/best_online/"
           >a JavaScript MCMC procedure for fitting a Bayesian model</a
@@ -3204,7 +3425,85 @@
         where you will find the code and a README file full of details. You can
         also check out a couple of interactive demos that I’ve made:
       </p>
-      <p>
+      <ul>
+        <li>
+          <a
+            href="https://codepen.io/rasmusab/pen/LpaKep?editors=001"
+            _msttexthash="424021"
+            _msthash="91"
+            >A Normal distribution</a
+          >
+        </li>
+        <li>
+          <font _mstmutation="1" _msttexthash="1188252" _msthash="92"
+            ><a
+              href="https://codepen.io/rasmusab/pen/LGRVod?editors=001"
+              _mstmutation="1"
+              >A Bernouli distribution with a Beta prior</a
+            >.</font
+          >
+        </li>
+        <li>
+          <a
+            href="https://codepen.io/rasmusab/pen/VejLPX?editors=001"
+            _msttexthash="1178138"
+            _msthash="93"
+            >A Bernouli model with a spike-n-slab prior</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://codepen.io/rasmusab/pen/OMROVe?editors=001"
+            _msttexthash="1031706"
+            _msthash="94"
+            >An analysis of capture-recapture data</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://codepen.io/rasmusab/pen/eJdyPo?editors=001"
+            _msttexthash="1437358"
+            _msthash="95"
+            >Correlation analysis / bivariate Normal model</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://codepen.io/rasmusab/pen/wMzyGE?editors=001"
+            _msttexthash="538005"
+            _msthash="96"
+            >Simple linear regression</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://codepen.io/rasmusab/pen/eJdVBm?editors=001"
+            _msttexthash="905567"
+            _msthash="97"
+            >Multivariate logistic regression</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://codepen.io/rasmusab/pen/jWMYxK?editors=001"
+            _msttexthash="3703505"
+            _msthash="98"
+            >the “Pump” example from the BUGS project</a
+          >
+        </li>
+        <li>
+          <font _mstmutation="1" _msttexthash="23169822" _msthash="99"
+            ><a
+              href="https://codepen.io/rasmusab/pen/VewLoM?editors=001"
+              _mstmutation="1"
+              >An hierarchical model with varying slope and intercept from
+              Gelman and Hill (2006)
+            </a>
+            (This is stretching the limits of what the simple can do…)</font
+          ><code>AmwgSampler</code>
+        </li>
+      </ul>
+      <p _msttexthash="46467226" _msthash="100">
         These demos rely on the
         <a href="https://plot.ly/javascript/">plotly library</a> and I haven’t
         tested them extensively on different platforms/browsers. You should be
@@ -3212,41 +3511,53 @@
         change some stuff, like adding multidimensional variables, the plotting
         might stop working).
       </p>
-      <h2 id="whats-included-in-bayesjs">What’s included in bayes.js?</h2>
-      <p>The two major files in bayes.js are:</p>
+      <h2 id="whats-included-in-bayesjs" _msttexthash="1778335" _msthash="101">
+        What’s included in bayes.js?
+      </h2>
+      <p _msttexthash="849602" _msthash="102">
+        The two major files in bayes.js are:
+      </p>
       <ul>
         <li>
-          <strong>mcmc.js</strong> - Implements a MCMC framework which can be
-          used to fit Bayesian model with both discrete and continuous
-          parameters. Currently the only algorithm that is implemented is a
-          version of the
-          <em>adaptive Metropolis within Gibbs</em> (<code>AmwgSampler</code>)
-          algorithm presented by
-          <a href="https://probability.ca/jeff/ftpdir/adaptex.pdf"
-            >Roberts and Rosenthal (2009) </a
-          >. Loading this file in the browser creates the global object
-          <code>mcmc</code>.
+          <font _mstmutation="1" _msttexthash="57983250" _msthash="103"
+            ><strong _mstmutation="1">mcmc.js</strong> - Implements a MCMC
+            framework which can be used to fit Bayesian model with both discrete
+            and continuous parameters. Currently the only algorithm that is
+            implemented is a version of the
+            <em _mstmutation="1">adaptive Metropolis within Gibbs</em> ()
+            algorithm presented by
+            <a
+              href="https://probability.ca/jeff/ftpdir/adaptex.pdf"
+              _mstmutation="1"
+              >Roberts and Rosenthal (2009) </a
+            >. Loading this file in the browser creates the global object
+            .</font
+          ><code>AmwgSampler</code><code>mcmc</code>
         </li>
         <li>
-          <strong>distributions.js</strong> - A collection of log density
-          functions that can be used to construct Bayesian models. Follows the
-          naming scheme <code>ld.*</code> (for example, <code>ld.norm</code> and
-          <code>ld.pois</code>) and uses the same parameters as the
-          <code>d*</code> density functions in R. Loading this file in the
-          browser creates the global object <code>ld</code>.
+          <font _mstmutation="1" _msttexthash="36340512" _msthash="104"
+            ><strong _mstmutation="1">distributions.js</strong> - A collection
+            of log density functions that can be used to construct Bayesian
+            models. Follows the naming scheme (for example, and ) and uses the
+            same parameters as the density functions in R. Loading this file in
+            the browser creates the global object .</font
+          ><code>ld.*</code><code>ld.norm</code><code>ld.pois</code
+          ><code>d*</code><code>ld</code>
         </li>
       </ul>
-      <p>
+      <p _msttexthash="13232921" _msthash="105">
         In addition to this the whole thing is wrapped in an
         <a href="https://www.rstudio.com/">Rstudio</a> project as I’ve use R and
         JAGS to write some tests.
       </p>
-      <h2 id="faq">FAQ</h2>
+      <h2 id="faq" _msttexthash="22607" _msthash="106">FAQ</h2>
       <ul>
         <li>
-          When is a JavaScript MCMC sampler useful?
+          <font _mstmutation="1" _msttexthash="1096602" _msthash="107"
+            >When is a JavaScript MCMC sampler useful?
+          </font>
           <ul>
-            <li>
+            <li _msttexthash="128883755" _msthash="108">
               Well, for starters, it’s <em>not</em> particularly useful if you
               want to do serious Bayesian data analysis. Then you should use a
               serious tool like
@@ -3260,9 +3571,11 @@
           </ul>
         </li>
         <li>
-          How good is the sampler that bayes.js uses?
+          <font _mstmutation="1" _msttexthash="1190774" _msthash="109"
+            >How good is the sampler that bayes.js uses?
+          </font>
           <ul>
-            <li>
+            <li _msttexthash="207614446" _msthash="110">
               bayes.js implements the
               <em>adaptive Metropolis within Gibbs</em> described by
               <a href="https://probability.ca/jeff/ftpdir/adaptex.pdf"
@@ -3279,9 +3592,11 @@
           </ul>
         </li>
         <li>
-          What is “a small number of parameters”?
+          <font _mstmutation="1" _msttexthash="6414902" _msthash="111"
+            >What is “a small number of parameters”?
+          </font>
           <ul>
-            <li>
+            <li _msttexthash="30475822" _msthash="112">
               Depends heavily on context but &lt;10 is probably “small” here.
               But depending on the model you’re trying to run you might get away
               with 100+ parameters.
@@ -3289,48 +3604,62 @@
           </ul>
         </li>
         <li>
-          How fast is it?
+          <font _mstmutation="1" _msttexthash="200447" _msthash="113"
+            >How fast is it?
+          </font>
           <ul>
             <li>
-              Also super context dependent. On simple models it’s pretty fast,
-              for example, fitting a standard Normal model on 1000 datapoints
-              producing a sample of 20,000 draws takes ~0.5 s. on my computer.
-              Also, when I’ve been playing around with different browsers I’ve
-              seen order-of-magnitude changes in performance when changing
-              seemingly arbitrary things. For example, inlining the definition
-              of the Normal density in the function calculating the log
-              posterior rather than using <code>ld.norm</code> defined in
-              <strong>distributions.js</strong> resulted in 10x slower sampling
-              on Firefox 37.
+              <font _mstmutation="1" _msttexthash="196991093" _msthash="114"
+                >Also super context dependent. On simple models it’s pretty
+                fast, for example, fitting a standard Normal model on 1000
+                datapoints producing a sample of 20,000 draws takes ~0.5 s. on
+                my computer. Also, when I’ve been playing around with different
+                browsers I’ve seen order-of-magnitude changes in performance
+                when changing seemingly arbitrary things. For example, inlining
+                the definition of the Normal density in the function calculating
+                the log posterior rather than using defined in
+                <strong _mstmutation="1">distributions.js</strong> resulted in
+                10x slower sampling on Firefox 37.</font
+              ><code>ld.norm</code>
             </li>
           </ul>
         </li>
       </ul>
-      <h2 id="references">References</h2>
-      <p>
+      <h2 id="references" _msttexthash="155311" _msthash="115">References</h2>
+      <p _msttexthash="9081904" _msthash="116">
         Roberts, G. O., &amp; Rosenthal, J. S. (2009). Examples of adaptive
         MCMC. <em>Journal of Computational and Graphical Statistics</em>, 18(2),
         349-367.
         <a href="https://probability.ca/jeff/ftpdir/adaptex.pdf">pdf</a>
       </p>
       <div class="signature">
-        Posted by Rasmus Bååth | 2015-12-31 | Tags:
-        <a href="https://www.sumsar.net/tags/bayesian/">Bayesian</a>,
-        <a href="https://www.sumsar.net/tags/r/">R</a>,
-        <a href="https://www.sumsar.net/tags/statistics/">Statistics</a>,
-        <a href="https://www.sumsar.net/tags/javascript/">JavaScript</a>
+        <font _mstmutation="1" _msttexthash="3400007" _msthash="117">
+          Posted by Rasmus Bååth | 2015-12-31 | Tags:
+          <a href="https://www.sumsar.net/tags/bayesian/" _mstmutation="1"
+            >Bayesian</a
+          >, <a href="https://www.sumsar.net/tags/r/" _mstmutation="1">R</a>,
+          <a href="https://www.sumsar.net/tags/statistics/" _mstmutation="1"
+            >Statistics</a
+          >,
+          <a href="https://www.sumsar.net/tags/javascript/" _mstmutation="1"
+            >JavaScript</a
+          ></font
+        >
       </div>
     </main>
     <hr />
 
     <footer>
       <p>
-        Copyright © 2023 - Rasmus Bååth<br />
-        Licensed under a
-        <a
-          rel="license"
-          href="https://creativecommons.org/licenses/by/4.0/deed.en_US"
-          >Creative Commons Attribution 4.0 International License</a
+        <font _mstmutation="1" _msttexthash="6036758" _msthash="118">
+          Copyright © 2023 - Rasmus Bååth<br _mstmutation="1" />
+          Licensed under a
+          <a
+            rel="license"
+            href="https://creativecommons.org/licenses/by/4.0/deed.en_US"
+            _mstmutation="1"
+            >Creative Commons Attribution 4.0 International License</a
+          ></font
         >
       </p>
     </footer>
