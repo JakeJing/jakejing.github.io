@@ -28,7 +28,10 @@
       content="https://sumsar.net/images/open-graph-placeholder.png"
     />
 
-    <link rel="stylesheet" href="./katex.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://github.com/JakeJing/jakejing.github.io/blob/master/_posts/katex.min.css"
+    />
     <script defer="" src="./katex.min.js"></script>
 
     <script defer="" src="./auto-render.min.js"></script>
@@ -43,8 +46,10 @@
         });
       });
     </script>
-
-    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://github.com/JakeJing/jakejing.github.io/blob/master/_posts/style.css"
+    />
     <script type="text/javascript" src="./jquery.min.js"></script>
     <script type="text/javascript" src="./plotly-1.3.0.min.js"></script>
     <style></style>
@@ -2979,160 +2984,130 @@
       </div>
       <div id="text_output_div"></div>
       <script>
-        function loadScript(url, callback) {
-          // Adding the script tag to the head as suggested before
-          var head = document.getElementsByTagName("head")[0];
-          var script = document.createElement("script");
-          script.type = "text/javascript";
-          script.src = url;
-
-          // Then bind the event to the callback function.
-          // There are several events for cross browser compatibility.
-          script.onreadystatechange = callback;
-          script.onload = callback;
-
-          // Fire the loading
-          head.appendChild(script);
-        }
-
         var clear_samples;
         var sample_loop;
         var stop_sample_loop;
+        var heights = [183, 192, 182, 177, 185, 188, 188, 182, 185];
 
-        // loadScript("./jquery.min.js", function(){
-        // loadScript("https://cdn.plot.ly/plotly-1.3.0.min.js", function(){
-        loadScript("./jquery.min.js", function () {
-          loadScript("./plotly-1.3.0.min.js", function () {
-            loadScript("./mcmc.js", function () {
-              loadScript("./distributions.js", function () {
-                var heights = [183, 192, 182, 177, 185, 188, 188, 182, 185];
+        var params = {
+          mu: { type: "real" },
+          sigma: { type: "real", lower: 0 },
+        };
 
-                var params = {
-                  mu: { type: "real" },
-                  sigma: { type: "real", lower: 0 },
-                };
+        var log_post = function (state, heights) {
+          var log_post = 0;
+          // Priors (here sloppy and vague...)
+          log_post += ld.norm(state.mu, 0, 1000);
+          log_post += ld.unif(state.sigma, 0, 1000);
+          // Likelihood
+          for (var i = 0; i < heights.length; i++) {
+            log_post += ld.norm(heights[i], state.mu, state.sigma);
+          }
+          return log_post;
+        };
 
-                var log_post = function (state, heights) {
-                  var log_post = 0;
-                  // Priors (here sloppy and vague...)
-                  log_post += ld.norm(state.mu, 0, 1000);
-                  log_post += ld.unif(state.sigma, 0, 1000);
-                  // Likelihood
-                  for (var i = 0; i < heights.length; i++) {
-                    log_post += ld.norm(heights[i], state.mu, state.sigma);
-                  }
-                  return log_post;
-                };
+        // Initializing the sampler and generate a sample of size 1000
+        var sampler = new mcmc.AmwgSampler(params, log_post, heights);
+        sampler.burn(1000);
+        var samples = sampler.sample(1000);
 
-                // Initializing the sampler and generate a sample of size 1000
-                var sampler = new mcmc.AmwgSampler(params, log_post, heights);
-                sampler.burn(1000);
-                var samples = sampler.sample(1000);
+        //// Below is just the code to run the sampler and
+        //// to plot the samples. It's somewhat of a hack...
+        ////////////////////////////////////////////////////
 
-                //// Below is just the code to run the sampler and
-                //// to plot the samples. It's somewhat of a hack...
-                ////////////////////////////////////////////////////
+        // Setting up the plots
+        var plot_margins = {
+          l: 40,
+          r: 10,
+          b: 40,
+          t: 40,
+          pad: 4,
+        };
 
-                // Setting up the plots
-                var plot_margins = {
-                  l: 40,
-                  r: 10,
-                  b: 40,
-                  t: 40,
-                  pad: 4,
-                };
+        var param_names = Object.keys(params);
+        var params_to_plot = Object.keys(params);
 
-                var param_names = Object.keys(params);
-                var params_to_plot = Object.keys(params);
+        for (var i = 0; i < params_to_plot.length; i++) {
+          var param = params_to_plot[i];
+          $("div#mcmc_plots_div").append(
+            "<div>" +
+              '<div id = "' +
+              param +
+              "_trace_div" +
+              '" style="width:300px;height:200px;display: inline-block;"></div>' +
+              '<div id = "' +
+              param +
+              "_hist_div" +
+              '" style="width:300px;height:200px;display: inline-block;"></div>' +
+              "</div>"
+          );
+          Plotly.plot(
+            $("div#" + param + "_trace_div")[0],
+            [{ y: samples[param] }],
+            {
+              margin: plot_margins,
+              title: "Traceplot of " + param,
+            }
+          );
+          Plotly.plot(
+            $("div#" + param + "_hist_div")[0],
+            [{ x: samples[param], type: "histogram" }],
+            {
+              margin: plot_margins,
+              title: "Posterior of " + param,
+            }
+          );
+        }
 
-                for (var i = 0; i < params_to_plot.length; i++) {
-                  var param = params_to_plot[i];
-                  $("div#mcmc_plots_div").append(
-                    "<div>" +
-                      '<div id = "' +
-                      param +
-                      "_trace_div" +
-                      '" style="width:300px;height:200px;display: inline-block;"></div>' +
-                      '<div id = "' +
-                      param +
-                      "_hist_div" +
-                      '" style="width:300px;height:200px;display: inline-block;"></div>' +
-                      "</div>"
-                  );
-                  Plotly.plot(
-                    $("div#" + param + "_trace_div")[0],
-                    [{ y: samples[param] }],
-                    {
-                      margin: plot_margins,
-                      title: "Traceplot of " + param,
-                    }
-                  );
-                  Plotly.plot(
-                    $("div#" + param + "_hist_div")[0],
-                    [{ x: samples[param], type: "histogram" }],
-                    {
-                      margin: plot_margins,
-                      title: "Posterior of " + param,
-                    }
-                  );
-                }
-
-                var update_trace_plots = function () {
-                  for (var i = 0; i < params_to_plot.length; i++) {
-                    var param = params_to_plot[i];
-                    Plotly.restyle($("div#" + param + "_trace_div")[0], {
-                      y: [samples[param]],
-                    });
-                  }
-                };
-
-                var update_histograms = function () {
-                  for (var i = 0; i < params_to_plot.length; i++) {
-                    var param = params_to_plot[i];
-                    Plotly.restyle($("div#" + param + "_hist_div")[0], {
-                      x: [samples[param]],
-                    });
-                  }
-                };
-
-                // Below are the functions that enables starting and stopping the
-                // sampling using the buttons
-
-                clear_samples = function () {
-                  samples = sampler.sample(1);
-                  update_trace_plots();
-                  update_histograms();
-                };
-
-                var sample_loop_timeout_id;
-                sample_loop = function () {
-                  var n_samples = Math.min(
-                    100,
-                    Math.ceil(samples[param_names[0]].length / 10)
-                  );
-                  var more_samples = sampler.sample(n_samples);
-                  for (var i = 0; i < param_names.length; i++) {
-                    var param = param_names[i];
-                    Array.prototype.push.apply(
-                      samples[param],
-                      more_samples[param]
-                    );
-                  }
-                  update_trace_plots();
-                  sample_loop_timeout_id = setTimeout(sample_loop, 1);
-                };
-
-                stop_sample_loop = function () {
-                  clearTimeout(sample_loop_timeout_id);
-                  update_trace_plots();
-                  update_histograms();
-                };
-
-                clear_samples();
-              });
+        var update_trace_plots = function () {
+          for (var i = 0; i < params_to_plot.length; i++) {
+            var param = params_to_plot[i];
+            Plotly.restyle($("div#" + param + "_trace_div")[0], {
+              y: [samples[param]],
             });
-          });
-        });
+          }
+        };
+
+        var update_histograms = function () {
+          for (var i = 0; i < params_to_plot.length; i++) {
+            var param = params_to_plot[i];
+            Plotly.restyle($("div#" + param + "_hist_div")[0], {
+              x: [samples[param]],
+            });
+          }
+        };
+
+        // Below are the functions that enables starting and stopping the
+        // sampling using the buttons
+
+        clear_samples = function () {
+          samples = sampler.sample(1);
+          update_trace_plots();
+          update_histograms();
+        };
+
+        var sample_loop_timeout_id;
+        sample_loop = function () {
+          var n_samples = Math.min(
+            100,
+            Math.ceil(samples[param_names[0]].length / 10)
+          );
+          var more_samples = sampler.sample(n_samples);
+          for (var i = 0; i < param_names.length; i++) {
+            var param = param_names[i];
+            Array.prototype.push.apply(samples[param], more_samples[param]);
+          }
+          update_trace_plots();
+          sample_loop_timeout_id = setTimeout(sample_loop, 1);
+        };
+
+        stop_sample_loop = function () {
+          clearTimeout(sample_loop_timeout_id);
+          update_trace_plots();
+          update_histograms();
+        };
+
+        clear_samples();
       </script>
       <p>
         <em _msttexthash="6907979" _msthash="53"
