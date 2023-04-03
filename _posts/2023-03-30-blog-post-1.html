@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<!-- saved from url=(0091)https://www.sumsar.net/blog/2015/12/bayes-js-a-small-library-for-doing-mcmc-in-the-browser/ -->
 <html lang="en-us">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -2917,10 +2915,6 @@
       var sampler = new mcmc.AmwgSampler(params, log_post, data);
       sampler.burn(500);
       var samples = sampler.sample(1);
-
-      //// Below is just the code to run the sampler and
-      //// to plot the samples. It's somewhat of a hack...
-      ////////////////////////////////////////////////////
 
       // Setting up the plots
       var plot_margins = { l: 40, r: 10, b: 40, t: 40, pad: 4 };
