@@ -28,10 +28,25 @@
       content="https://sumsar.net/images/open-graph-placeholder.png"
     />
 
-    <link rel="stylesheet" href="./katex.min.css" />
-    <script defer="" src="./katex.min.js"></script>
+    <!-- <link rel="stylesheet" href="./katex.min.css" /> -->
+    <!-- <script defer="" src="./katex.min.js"></script>
 
-    <script defer="" src="./auto-render.min.js"></script>
+    <script defer="" src="./auto-render.min.js"></script> -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+      integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+      integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -43,12 +58,24 @@
         });
       });
     </script>
-    <link rel="stylesheet" href="./style.css" />
-    <script type="text/javascript" src="./jquery.min.js"></script>
-    <script type="text/javascript" src="./plotly-1.3.0.min.js"></script>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.plot.ly/plotly-latest.min.js"
+    ></script>
     <style></style>
-    <script type="text/javascript" src="./mcmc.js"></script>
-    <script type="text/javascript" src="./distributions.js"></script>
+    <script
+      type="text/javascript"
+      src="https://rawgit.com/rasmusab/bayes.js/master/mcmc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://rawgit.com/rasmusab/bayes.js/master/distributions.js"
+    ></script>
   </head>
 
   <body
@@ -3652,7 +3679,4 @@
       ></path>
     </svg>
   </body>
-  <grammarly-desktop-integration
-    data-grammarly-shadow-root="true"
-  ></grammarly-desktop-integration>
 </html>
