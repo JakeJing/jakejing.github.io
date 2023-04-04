@@ -68,7 +68,7 @@ var log_post = function (state, data) {
 };
 
 // Setting up the plots
-var plot_margins = { l: 30, r: 10, b: 30, t: 30, pad: 4 };
+var plot_margins = { l: 60, r: 10, b: 30, t: 30, pad: 4 };
 let sampler = new mcmc.AmwgSampler(params, log_post, data);
 sampler.burn(1000);
 let samples = sampler.sample(1);
