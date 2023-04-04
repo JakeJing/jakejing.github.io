@@ -32,15 +32,16 @@ simulateButton.addEventListener("click", function () {
       data = sim;
       Input_params["μ"] = mu;
       Input_params["σ"] = sd;
-      messageDiv.innerHTML = "OK!";
-      setTimeout(function () {
-        messageDiv.innerHTML = "";
-      }, 500);
-      messageDiv.style.position = "absolute";
-      messageDiv.style.left = "68%";
-      messageDiv.style.top = "124px";
-      messageDiv.style.color = "green";
-      messageDiv.style.backgroundColor = "white";
+      window.alert("Simulation OK! Pls start sampling!");
+      // messageDiv.innerHTML = "OK!";
+      // setTimeout(function () {
+      //   messageDiv.innerHTML = "";
+      // }, 500);
+      // messageDiv.style.position = "absolute";
+      // messageDiv.style.left = "68%";
+      // messageDiv.style.top = "124px";
+      // messageDiv.style.color = "green";
+      // messageDiv.style.backgroundColor = "white";
     } else {
       window.alert("Please simulate data first!");
     }
@@ -79,11 +80,11 @@ for (var i = 0; i < params_to_plot.length; i++) {
       '<div id = "' +
       param +
       "_trace_div" +
-      '" style="width:350px;height:250px;display: inline-block;"></div>' +
+      '" style="width:350px;height:240px;display: inline-block;"></div>' +
       '<div id = "' +
       param +
       "_hist_div" +
-      '" style="width:350px;height:250px;display: inline-block;"></div>' +
+      '" style="width:350px;height:240px;display: inline-block;"></div>' +
       "</div>"
   );
   Plotly.plot($("div#" + param + "_trace_div")[0], [{ y: samples[param] }], {
