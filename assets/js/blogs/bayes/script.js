@@ -80,11 +80,11 @@ for (var i = 0; i < params_to_plot.length; i++) {
       '<div id = "' +
       param +
       "_trace_div" +
-      '" style="width:350px;height:240px;display: inline-block;"></div>' +
+      '" style="width:320px;height:200px;display: inline-block;"></div>' +
       '<div id = "' +
       param +
       "_hist_div" +
-      '" style="width:350px;height:240px;display: inline-block;"></div>' +
+      '" style="width:320px;height:200px;display: inline-block;"></div>' +
       "</div>"
   );
   Plotly.plot($("div#" + param + "_trace_div")[0], [{ y: samples[param] }], {
