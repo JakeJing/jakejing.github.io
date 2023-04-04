@@ -32,7 +32,7 @@ simulateButton.addEventListener("click", function () {
       data = sim;
       Input_params["μ"] = mu;
       Input_params["σ"] = sd;
-      window.alert("Simulation OK! Pls start sampling!");
+      window.alert("Simulation OK! Now you can start sampling!");
       // messageDiv.innerHTML = "OK!";
       // setTimeout(function () {
       //   messageDiv.innerHTML = "";
