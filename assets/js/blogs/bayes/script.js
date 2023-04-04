@@ -68,7 +68,7 @@ var log_post = function (state, data) {
 };
 
 // Setting up the plots
-var plot_margins = { l: 40, r: 10, b: 40, t: 40, pad: 4 };
+var plot_margins = { l: 30, r: 10, b: 30, t: 30, pad: 4 };
 let sampler = new mcmc.AmwgSampler(params, log_post, data);
 sampler.burn(1000);
 let samples = sampler.sample(1);
@@ -80,11 +80,11 @@ for (var i = 0; i < params_to_plot.length; i++) {
       '<div id = "' +
       param +
       "_trace_div" +
-      '" style="width:320px;height:200px;display: inline-block;"></div>' +
+      '" style="width:340px;height:250px;display: inline-block;"></div>' +
       '<div id = "' +
       param +
       "_hist_div" +
-      '" style="width:320px;height:200px;display: inline-block;"></div>' +
+      '" style="width:340px;height:250px;display: inline-block;"></div>' +
       "</div>"
   );
   Plotly.plot($("div#" + param + "_trace_div")[0], [{ y: samples[param] }], {
