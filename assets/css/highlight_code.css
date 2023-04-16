@@ -1,0 +1,17 @@
+pre code {
+    font-size: 16px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+pre.highlight>button {
+    opacity: 0;
+}
+
+pre.highlight:hover>button {
+    opacity: 1;
+}
+
+pre.highlight>button:active,
+pre.highlight>button:focus {
+    opacity: 1;
+}
