@@ -11,6 +11,10 @@
     cursor: pointer;
     font-weight: bold;
 }
+.copy-code-button {
+	 display: block;
+}
 .container .content {
     display: none;
     padding : 5px;
+
