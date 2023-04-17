@@ -250,6 +250,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
+  - rouge
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
