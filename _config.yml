@@ -116,8 +116,8 @@ include:
   - .htaccess
   - _pages
   - files
-  - assets/js/copy_button.js
-  - assets/css/highlight_code.css
+    #  - assets/js/copy_button.js
+    #- assets/css/highlight_code.css
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
