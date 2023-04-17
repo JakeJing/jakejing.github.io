@@ -16,3 +16,7 @@ gem "jekyll-gist", "~> 1.5"
 gem "jekyll-feed", "~> 0.17.0"
 
 gem "jekyll-redirect-from", "~> 0.16.0"
+
+gem "webrick", "~> 1.8"
+
+gem "thin", "~> 1.8"

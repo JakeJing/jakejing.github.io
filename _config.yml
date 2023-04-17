@@ -116,7 +116,7 @@ include:
   - .htaccess
   - _pages
   - files
-    #  - assets/js/copy_button.js
+    #- assets/js/copy_button.js
     #- assets/css/highlight_code.css
 exclude:
   - "*.sublime-project"
@@ -160,7 +160,6 @@ incremental: false
 # Markdown Processing
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
   hard_wrap: false
   auto_ids: true
   footnote_nr: 1
@@ -250,7 +249,6 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
-  - rouge
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
