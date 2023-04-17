@@ -3,7 +3,28 @@ pre code {
     font-family: "Times New Roman", Times, serif;
 }
 
-pre.highlight>button {
+pre.highlight {
+    background-color: #f8f8f8;
+    /* border: 1px solid #ddd; */
+    /* border-radius: 3px; */
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 1em;
+    padding: 1em;
+    overflow: auto;
+}
+
+.highlight .err {
+    color: #a61717;
+    background-color: #e3d2d2;
+    border: 1px solid #c5b8b8;
+    display: inline-block;
+    margin: -0.5em 0;
+    padding: 0.5em;
+}
+
+/* pre.highlight>button {
     opacity: 0;
 }
 
@@ -14,4 +35,4 @@ pre.highlight:hover>button {
 pre.highlight>button:active,
 pre.highlight>button:focus {
     opacity: 1;
-}
+} */
