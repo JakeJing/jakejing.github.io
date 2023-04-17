@@ -160,6 +160,9 @@ incremental: false
 # Markdown Processing
 kramdown:
   input: GFM
+  syntax_highlighter_option:
+    default_lang: html
+    css_class: 'syntax'
   hard_wrap: false
   auto_ids: true
   footnote_nr: 1
