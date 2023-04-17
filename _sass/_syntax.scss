@@ -2,6 +2,9 @@
    Syntax highlighting
    ========================================================================== */
 
+@import "rouge";
+@import "rouge/themes/github";
+
 div.highlighter-rouge, figure.highlight {
   position: relative;
   margin-bottom: 1em;
