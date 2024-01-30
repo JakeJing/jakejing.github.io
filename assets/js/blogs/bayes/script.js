@@ -33,6 +33,9 @@ simulateButton.addEventListener("click", function () {
       Input_params["μ"] = mu;
       Input_params["σ"] = sd;
       window.alert("Simulation OK! Now you can start sampling!");
+      // disable simulate, if data has been generated
+      this.disabled = true;
+
       // messageDiv.innerHTML = "OK!";
       // setTimeout(function () {
       //   messageDiv.innerHTML = "";
@@ -68,7 +71,7 @@ var log_post = function (state, data) {
 };
 
 // Setting up the plots
-var plot_margins = { l: 60, r: 10, b: 30, t: 30, pad: 4 };
+var plot_margins = { l: 40, r: 10, b: 40, t: 40, pad: 4 };
 let sampler = new mcmc.AmwgSampler(params, log_post, data);
 sampler.burn(1000);
 let samples = sampler.sample(1);
@@ -80,11 +83,11 @@ for (var i = 0; i < params_to_plot.length; i++) {
       '<div id = "' +
       param +
       "_trace_div" +
-      '" style="width:340px;height:250px;display: inline-block;"></div>' +
+      '" style="width:350px;height:250px;display: inline-block;"></div>' +
       '<div id = "' +
       param +
       "_hist_div" +
-      '" style="width:340px;height:250px;display: inline-block;"></div>' +
+      '" style="width:350px;height:250px;display: inline-block;"></div>' +
       "</div>"
   );
   Plotly.plot($("div#" + param + "_trace_div")[0], [{ y: samples[param] }], {
@@ -188,11 +191,15 @@ var stop_sample_loop = function () {
 startsampling.addEventListener("click", function () {
   // if sampling has begun once (bcs stopMCMC.disabled is true), continue the sampling
   if (document.getElementById("stopMCMC").disabled) {
+    // need to disable startMCMC so that Start and Stop button can switch on and off
+    document.getElementById("startMCMC").disabled = true;
     sample_loop(params, log_post, data);
     document.getElementById("stopMCMC").disabled = false;
   } else {
     if (data.length > 0) {
       this.disabled = true;
+      // switch Start label to Continue
+      startsampling.textContent = "Continue";
       document.getElementById("stopMCMC").disabled = false;
       // update the sampler with new data after the click
       sampler = new mcmc.AmwgSampler(params, log_post, data);
@@ -219,11 +226,14 @@ stopsampling.addEventListener("click", function () {
 // Add event listener for the "clearsampling" button
 clearsampling.addEventListener("click", function () {
   if (data.length > 0) {
+    // change the startsampling label back
+    startsampling.textContent = "Start";
+    document.getElementById("simulate").disabled = false;
     document.getElementById("startMCMC").disabled = false;
     document.getElementById("stopMCMC").disabled = false;
     clear_samples();
+    data = [];
   } else {
     window.alert("Please simulate data first!");
   }
 });
-
