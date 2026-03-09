@@ -1,8 +1,10 @@
+
 h2 {
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
   font-size: 35px;
 }
+
 .input-container {
   margin: 0px;
   margin-left: 10px;
@@ -11,42 +13,42 @@ h2 {
   flex-direction: row;
   justify-content: center;
 }
+
 input[type="number"] {
-	width: 90px;
-  	height: 30px;
-	margin-right: 20px;
-	margin-bottom: 0px;
-  	text-align: center;
+  width: 90px;
+  height: 30px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  text-align: center;
 }
 
 .button-container {
   margin-top: 20px;
   margin-right: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+
 button {
-	width: 130px;
-  	height: 30px;
-	padding: 20px auto;
-  	margin-right: 10px;
+  width: 130px;
+  height: 30px;
+  padding: 20px auto;
+  margin-right: 10px;
 }
 
 button:hover {
-	opacity: 0.8;
+  opacity: 0.8;
 }
 
 /* for computer */
 @media (min-width: 768px) {
-#mcmc_plots_div{
-	display: flex;
-	/* position: fixed; */
-	flex-direction: row;
-	justify-content: center;
-    align-items: center;
-	margin-left: 20px;
+  #mcmc_plots_div {
+    position: fixed;
+    left: 49.2%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
