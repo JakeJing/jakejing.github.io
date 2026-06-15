@@ -1,4 +1,3 @@
-
 h2 {
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
@@ -6,9 +5,7 @@ h2 {
 }
 
 .input-container {
-  margin: 0px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0px 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -18,14 +15,11 @@ input[type="number"] {
   width: 90px;
   height: 30px;
   margin-right: 20px;
-  margin-bottom: 0px;
   text-align: center;
 }
 
 .button-container {
-  margin-top: 20px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin: 20px 10px 10px 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -35,7 +29,6 @@ input[type="number"] {
 button {
   width: 130px;
   height: 30px;
-  padding: 20px auto;
   margin-right: 10px;
 }
 
@@ -43,12 +36,45 @@ button:hover {
   opacity: 0.8;
 }
 
-/* for computer */
-@media (min-width: 768px) {
-  #mcmc_plots_div {
-    position: fixed;
-    left: 49.2%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+/* =========================
+   PLOT AREA FIX (IMPORTANT)
+   ========================= */
+
+#mcmc_plots_div {
+  width: 100%;
+  margin-top: 20px;
+  display: block;
+  position: relative;
+  /* KEY FIX */
+  clear: both;
+  overflow: auto;
+}
+
+/* Plotly containers */
+.js-plotly-plot,
+.plotly,
+.plot-container {
+  position: relative !important;
+  display: block;
+}
+
+/* Layout for each parameter row */
+.plot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Individual plot boxes */
+.plot-box {
+  flex: 1 1 350px;
+  min-height: 250px;
+}
+
+/* Mobile-friendly stacking */
+@media (max-width: 768px) {
+  .plot-row {
+    flex-direction: column;
   }
 }
