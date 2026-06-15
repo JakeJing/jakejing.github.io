@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am currently a visiting researcher at the Department of Linguistics and Philology, Uppsala University. Before that, I got my Ph.D. at the Department of Comparative Language Science, University of Zürich, with a background of **evolutionary linguistics** and **linguistic typology**. My research focuses on exploring the evolutionary dynamics of language syntax from two perspectives:
+I am currently an assistant professor at the Institute of Modern Languages and Linguistics, Fudan University. Before that, I got my Ph.D. at the Department of Comparative Language Science, University of Zürich, with a background of **evolutionary linguistics** and **linguistic typology**. My research focuses on exploring the evolutionary dynamics of language syntax from two perspectives:
 
 1. comparing the distributional patterns in language usage against random baselines;
 2. modeling the evolutionary histories of typological features via phylogenetic inference.
