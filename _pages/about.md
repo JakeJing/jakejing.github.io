@@ -8,20 +8,21 @@ redirect_from:
   - /about.html
 ---
 
-I am currently an assistant professor at the Institute of Modern Languages and Linguistics, Fudan University. Before that, I got my Ph.D. at the Department of Comparative Language Science, University of Zürich, with a background of **evolutionary linguistics** and **linguistic typology**. My research focuses on exploring the evolutionary dynamics of language syntax from two perspectives:
+I am currently an assistant professor at the Institute of Modern Languages and Linguistics, Fudan University. Before that, I got my Ph.D. at the Department of Comparative Language Science, University of Zürich, with a background of **linguistic typology** and **language evolution**. My research sits at the intersection of quantitative typology, comparative linguistics, and multilingual NLP, and explores the dynamics of language systems from two complementary perspectives:
 
-1. comparing the distributional patterns in language usage against random baselines;
-2. modeling the evolutionary histories of typological features via phylogenetic inference.
+💡 ***If you are interested in pursuing a Ph.D. at Fudan University, please feel free to contact me.***
 
 A data-driven approach
-======
-We are living in a world that is defined by languages. We are communicating with the world via languages, and the languages we acquire may in turn affect the way we think and behave. To better understand our languages and ourselves, we need to a data-driven approach, especially in this digital age. I am open to all sorts of data (*movie subtitles*, *Wikipedia databases*, *parallel corpora*, *dependency treebanks*) in different languages, though they can sometimes be quite noisy. We need to preprocess these raw texts (tokenizing, tagging, and parsing) with pre-trained language models, and get a more structured format for further research. This corpus-based approach is important for us to get an idea of how our languages are developed and constrained.
+==========
+
+Language shapes the world we live in. We communicate through language, and the languages we acquire may, in turn, influence how we think and behave. To better understand language and ourselves, we need a data-driven approach, particularly in the digital age. I am interested in a wide range of linguistic data, including movie subtitles, Wikipedia data, parallel corpora, and dependency treebanks across different languages. The availability of large-scale cross-linguistic data provides valuable opportunities to for us investigate the structural diversity of languages and the constraints that shape language use. I am particularly interested in how languages are used, how their structures emerge, and what factors drive linguistic diversity across the world's languages.
+
+![Bayesian distributional regression models that predict word order variation across 71 languages (Jing et al. 2021 Cognitive Science)](https://raw.githubusercontent.com/JakeJing/jakejing.github.io/master/images/distributional-model.png)
 
 An evolutionary approach
-======
-Languages are evolving! The languages we are using can tell us where we are from and where we are going. Like genes, languages also encode important information about our ancestral histories. Comparative approaches, like *phylogenetic inference*, allow us to estimate the language histories and detect the evolutionary trends of linguistic features in time and space. Like natural selection, those typological traits that are easy to process, produce or learn, will have a higher chance to be preserved and transmitted from generation to generation. Thus, it is necessary to model the dynamics of language systems and understand the driving forces in language change across the world's languages.
+==========
 
+Languages are constantly evolving! The languages we use today carry traces of where we come from and how our linguistic systems have developed. Much like genes, languages preserve information about their histories of transmission and diversification. Comparative methods, particularly phylogenetic inference, allow us to reconstruct language histories and investigate how linguistic features evolve across time and space. Linguistic change may be shaped by a range of factors, including language processing, production, and learning. I am interested in modeling the evolutionary dynamics of language systems, and investigating how functional pressures may be reflected in, and detected throughout, the entire history of language phylogenies. 
 
-
-
+![Word order evolves at similar rates in main and subordinate clauses (Jing et al. 2023 Diachronica)](https://raw.githubusercontent.com/JakeJing/jakejing.github.io/master/images/main-sub-clauses.png)
 
