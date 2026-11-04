@@ -32,7 +32,7 @@ Languages are constantly evolving! The languages we use today carry traces of wh
 <div style="text-align: center;">
   <img src="/images/main-sub-clauses.png"
        alt="Word order evolves at similar rates in main and subordinate clauses (Jing et al. 2023 Diachronica)"
-       style="width: 75%; height: auto;">
+       style="width: 80%; height: auto;">
 </div>
 
 
