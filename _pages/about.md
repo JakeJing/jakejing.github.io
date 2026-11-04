@@ -17,12 +17,23 @@ A data-driven approach
 
 Language shapes the world we live in. We communicate through language, and the languages we acquire may, in turn, influence how we think and behave. To better understand language and ourselves, we need a data-driven approach, particularly in the digital age. I am interested in a wide range of linguistic data, including movie subtitles, Wikipedia data, parallel corpora, and dependency treebanks across different languages. The availability of large-scale cross-linguistic data provides valuable opportunities to for us investigate the structural diversity of languages and the constraints that shape language use. I am particularly interested in how languages are used, how their structures emerge, and what factors drive linguistic diversity across the world's languages.
 
-![Bayesian distributional regression models that predict word order variation across 71 languages (Jing et al. 2021 Cognitive Science)](https://raw.githubusercontent.com/JakeJing/jakejing.github.io/master/images/distributional-model.png)
+<div style="text-align: center;">
+<img src="/images/distributional-model.png" 
+     alt="Bayesian distributional regression models that predict word order variation across 71 languages (Jing et al. 2021 Cognitive Science)"
+     style="width: 100%; height: auto;">
+</div>
+
 
 An evolutionary approach
 ==========
 
 Languages are constantly evolving! The languages we use today carry traces of where we come from and how our linguistic systems have developed. Much like genes, languages preserve information about their histories of transmission and diversification. Comparative methods, particularly phylogenetic inference, allow us to reconstruct language histories and investigate how linguistic features evolve across time and space. Linguistic change may be shaped by a range of factors, including language processing, production, and learning. I am interested in modeling the evolutionary dynamics of language systems, and investigating how functional pressures may be reflected in, and detected throughout, the entire history of language phylogenies. 
 
-![Word order evolves at similar rates in main and subordinate clauses (Jing et al. 2023 Diachronica)](https://raw.githubusercontent.com/JakeJing/jakejing.github.io/master/images/main-sub-clauses.png)
+<div style="text-align: center;">
+  <img src="/images/main-sub-clauses.png"
+       alt="Word order evolves at similar rates in main and subordinate clauses (Jing et al. 2023 Diachronica)"
+       style="width: 75%; height: auto;">
+</div>
+
+
 
